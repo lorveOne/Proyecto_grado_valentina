@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo de Entrega y Recibo de Turno · HUHMP & UAN</title>
+    <meta name="description" content="Protocolo didáctico GDI-INV-ENF-PR-006 · Hospital Universitario Hernando Moncaleano Perdomo · Universidad Antonio Nariño · Realizado por Valentina Alarcón Ramírez">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ========================= NAV ========================= -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="nav-brand">
+                <div class="nav-mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21l-7-7 7-7M5 14h14"/></svg>
+                </div>
+                <div class="nav-brand-text">
+                    <strong>Entrega de Turno</strong>
+                    <small>GDI-INV-ENF-PR-006</small>
+                </div>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#objetivos">Objetivos</a></li>
+                <li><a href="#ideas">IDEAS</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#uniforme">Uniforme</a></li>
+                <li><a href="#checklist">Chequeo</a></li>
+                <li><a href="#materiales">Material</a></li>
+                <li><a href="#autora">Autora</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========================= HERO ========================= -->
+    <header class="hero" id="inicio">
+        <div class="hero-bg">
+            <div class="hero-photo"></div>
+            <div class="hero-grid"></div>
+            <div class="hero-glow glow-1"></div>
+            <div class="hero-glow glow-2"></div>
+            <div class="hero-glow glow-3"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-logos">
+                <div class="logo-pill">
+                    <img src="assets/logo-hospital.jpeg" alt="Hospital Universitario HMP">
+                </div>
+                <div class="logo-handshake">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 11l5-5M3 13l5 5M21 6l-9 9-4-4-7 7"/></svg>
+                </div>
+                <div class="logo-pill logo-pill-dark">
+                    <img src="assets/logo-uan.jpeg" alt="Universidad Antonio Nariño">
+                </div>
+            </div>
+
+            <span class="hero-tag">
+                <span class="dot"></span>
+                Convenio Docencia · Servicio · Septiembre 2025
+            </span>
+
+            <h1 class="hero-title">
+                Protocolo de <span class="grad-gold">Entrega y Recibo</span><br>
+                <span class="grad-emerald">de Turno</span> de Enfermería
+            </h1>
+
+            <p class="hero-sub">
+                Una guía visual, didáctica e interactiva para garantizar la <b>continuidad</b>, la <b>seguridad</b> y la <b>humanización</b> del cuidado en cada cambio de turno hospitalario.
+            </p>
+
+            <div class="hero-cta">
+                <a href="#ideas" class="btn btn-gold">
+                    <span>Conocer el método IDEAS</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#proceso" class="btn btn-ghost">Ver proceso completo</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-icon">⏰</div>
+                    <div class="stat-num">3</div>
+                    <div class="stat-lbl">Turnos diarios<br>7am · 1pm · 7pm</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon">💬</div>
+                    <div class="stat-num">5</div>
+                    <div class="stat-lbl">Letras del<br>método IDEAS</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-num">≥85<span>%</span></div>
+                    <div class="stat-lbl">Meta de<br>adherencia</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon">📋</div>
+                    <div class="stat-num">25</div>
+                    <div class="stat-lbl">Criterios<br>verificables</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,40 C240,90 480,90 720,50 C960,10 1200,10 1440,40 L1440,100 L0,100 Z" fill="#ffffff"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- ========================= INFO RAPIDA ========================= -->
+    <section class="quick-strip">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card"><div class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6M9 16h6M9 8h6M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div><h4>Código</h4><p>GDI-INV-ENF-PR-006</p></div>
+                <div class="info-card"><div class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h4>Versión · Emisión</h4><p>01 · Septiembre 2025</p></div>
+                <div class="info-card"><div class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><h4>Dirigido a</h4><p>Enfermería · Terapia · Docencia-servicio</p></div>
+                <div class="info-card"><div class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h4>Aplica en</h4><p>Atención inicial · Observación · Internación</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= AUTORA - VALENTINA (TOP) ========================= -->
+    <section class="section section-author" id="autora">
+        <div class="container">
+            <div class="author-frame">
+                <div class="author-bg-shapes">
+                    <div class="ash ash-1"></div>
+                    <div class="ash ash-2"></div>
+                    <div class="ash ash-3"></div>
+                </div>
+
+                <div class="author-content">
+                    <div class="author-photo-wrap">
+                        <div class="author-photo-ring">
+                            <div class="author-photo">
+                                <img src="assets/valentina.jpeg" alt="Valentina Alarcón Ramírez">
+                            </div>
+                        </div>
+                        <div class="author-badge">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <span>UAN</span>
+                        </div>
+                    </div>
+
+                    <div class="author-info">
+                        <span class="author-eyebrow">Página realizada por</span>
+                        <h2 class="author-name">Valentina<br>Alarcón Ramírez</h2>
+                        <div class="author-divider"></div>
+                        <p class="author-role">Estudiante de Octavo Semestre de Enfermería</p>
+                        <p class="author-uni">Universidad Antonio Nariño · Programa de Enfermería</p>
+
+                        <div class="author-meta">
+                            <div class="ameta">
+                                <div class="ameta-ic">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2m-16 0H3m9-13h.01M9 16h6"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+                                </div>
+                                <div>
+                                    <strong>Práctica formativa</strong>
+                                    <span>Hospital Universitario Hernando Moncaleano Perdomo</span>
+                                </div>
+                            </div>
+                            <div class="ameta">
+                                <div class="ameta-ic">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+                                </div>
+                                <div>
+                                    <strong>Protocolo trabajado</strong>
+                                    <span>GDI-INV-ENF-PR-006 · Versión 01 · Septiembre 2025</span>
+                                </div>
+                            </div>
+                            <div class="ameta">
+                                <div class="ameta-ic">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                </div>
+                                <div>
+                                    <strong>Lema institucional</strong>
+                                    <span>"¡Corazón para Servir!"</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <blockquote class="author-quote">
+                            "El mejor cuidado nace de la comunicación clara, la presencia y el respeto por cada paciente y su familia."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= ESCENA PRINCIPAL ========================= -->
+    <section class="scene-feature">
+        <div class="container">
+            <div class="scene-feature-frame">
+                <div class="scene-stage">
+                    <img src="assets/escenas/otros_2.jpeg" alt="Escena de entrega de turno en el Hospital Universitario" onerror="this.parentNode.classList.add('no-img')">
+                    <svg class="scene-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M3 21h18M5 21V8a3 3 0 013-3h8a3 3 0 013 3v13M9 9h.01M15 9h.01M9 13h6M9 17h4"/>
+                        <circle cx="12" cy="11" r="1.5" fill="currentColor"/>
+                    </svg>
+                    <div class="scene-fallback-text">
+                        Guarda aquí la ilustración: <strong>assets/escenas/escena-entrega-turno.jpg</strong>
+                    </div>
+                </div>
+                <div class="scene-caption">
+                    <span class="scene-caption-tag">Escena de referencia</span>
+                    <h3>Así se vive una <span class="text-emerald">entrega de turno</span> humanizada</h3>
+                    <p>El equipo asistencial — profesionales y auxiliares de enfermería — reunido en la estación, comunicando información clara y completa sobre los pacientes para garantizar la continuidad y la seguridad del cuidado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= QUE ES + DEFINICIONES ========================= -->
+    <section class="section section-cream">
+        <div class="container">
+            <div class="section-head center">
+                <span class="section-tag">Definición</span>
+                <h2>¿Qué es la <span class="text-emerald">entrega de turno</span>?</h2>
+                <p class="section-sub">Un proceso de comunicación informativo y educativo que conecta dos turnos en torno al cuidado del paciente.</p>
+            </div>
+
+            <div class="def-hero">
+                <div class="def-text">
+                    <p class="lead">Es el proceso de comunicación mediante el cual el personal de enfermería <b>entrante</b> y <b>saliente</b> intercambia información sobre la situación clínica y el plan de cuidados de cada paciente, además de toda la información administrativa de la unidad funcional.</p>
+                    <p>Su propósito es <strong>orientar la práctica diaria</strong>, asegurar y mantener la <strong>continuidad y la calidad del cuidado</strong> directo, en pro de la seguridad del paciente.</p>
+                    <ul class="bullet-shine">
+                        <li>Informativa y educativa para el equipo, el paciente y la familia.</li>
+                        <li>Se realiza preferentemente <strong>al lado de la cama</strong>.</li>
+                        <li>Incluye al paciente y su familia en el plan de cuidados.</li>
+                        <li>Disminuye eventos adversos por fallas de comunicación.</li>
+                    </ul>
+                </div>
+                <div class="def-vs">
+                    <div class="vs-side vs-out">
+                        <div class="vs-avatar">
+                            <img src="assets/escenas/personal-saliente.jpg" alt="Personal de enfermería saliente" onerror="this.parentNode.classList.add('no-img')">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.4 0-8 2.7-8 6v2h16v-2c0-3.3-3.6-6-8-6z"/></svg>
+                        </div>
+                        <h4>Personal Saliente</h4>
+                        <p>Entrega información clínica, novedades y pendientes</p>
+                    </div>
+                    <div class="vs-flow">
+                        <div class="vs-pill">IDEAS</div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                    </div>
+                    <div class="vs-side vs-in">
+                        <div class="vs-avatar">
+                            <img src="assets/escenas/personal-entrante.jpg" alt="Personal de enfermería entrante" onerror="this.parentNode.classList.add('no-img')">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.4 0-8 2.7-8 6v2h16v-2c0-3.3-3.6-6-8-6z"/></svg>
+                        </div>
+                        <h4>Personal Entrante</h4>
+                        <p>Recibe, valida y continúa el cuidado</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mini-head">Conceptos clave del protocolo</h3>
+            <div class="def-grid">
+                <article class="def-card def-card-blue">
+                    <div class="def-emoji">👥</div>
+                    <h4>Personal de enfermería</h4>
+                    <p>Equipo asistencial que brinda cuidado a los pacientes, integrado por profesionales y auxiliares distribuidos por turnos.</p>
+                </article>
+                <article class="def-card def-card-emerald">
+                    <div class="def-emoji">🤝</div>
+                    <h4>Paciente</h4>
+                    <p>Sujeto objeto de cuidado que recibe los servicios de un médico u otro profesional de la salud.</p>
+                </article>
+                <article class="def-card def-card-gold">
+                    <div class="def-emoji">📑</div>
+                    <h4>Historia clínica</h4>
+                    <p>Documento que surge en el contacto entre el equipo de salud y el usuario. Único documento válido desde el punto de vista médico y legal.</p>
+                </article>
+                <article class="def-card def-card-navy">
+                    <div class="def-emoji">🗣️</div>
+                    <h4>Reunión briefing</h4>
+                    <p>Sesión informativa breve y concisa para transmitir información clave y dar instrucciones claras al equipo.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= OBJETIVOS ========================= -->
+    <section class="section" id="objetivos">
+        <div class="container">
+            <div class="section-head center">
+                <span class="section-tag">Para qué sirve el protocolo</span>
+                <h2>Objetivos</h2>
+                <p class="section-sub">Garantizar continuidad, calidad, humanización y seguridad en la atención durante el cambio de turno.</p>
+            </div>
+
+            <!-- ============ OBJETIVO GENERAL ============ -->
+            <div class="obj-block obj-general">
+                <div class="obj-block-head">
+                    <div class="obj-block-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="6"/>
+                            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="obj-eyebrow">3.1.1</span>
+                        <h3>Objetivo General</h3>
+                    </div>
+                </div>
+                <p class="obj-general-text">
+                    Transmitir la información en la entrega y recibo de turno relacionada con la atención en salud de los pacientes de la <strong>E.S.E. Hospital Universitario Hernando Moncaleano Perdomo de Neiva</strong> en las diferentes unidades asistenciales, garantizando <strong>continuidad en el proceso de atención asistencial y administrativo, calidad, humanización del servicio, seguridad y accesibilidad</strong> al paciente y su familia, con el fin de garantizar la <strong>atención centrada en la persona y su familia</strong>, disminuir los riesgos de eventos adversos y fallas en la gestión clínica de los mismos.
+                </p>
+            </div>
+
+            <!-- ============ OBJETIVOS ESPECÍFICOS ============ -->
+            <div class="obj-block obj-especificos">
+                <div class="obj-block-head">
+                    <div class="obj-block-icon obj-block-icon-emerald">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"/>
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="obj-eyebrow">3.1.2</span>
+                        <h3>Objetivos Específicos</h3>
+                    </div>
+                </div>
+
+                <div class="goals-grid">
+                    <article class="goal-card">
+                        <div class="goal-num">01</div>
+                        <h4>Formato estandarizado</h4>
+                        <p>Establecer un formato estandarizado para la entrega y recibo de turno que <strong>garantice la transmisión completa y clara de la información relevante del paciente</strong>.</p>
+                    </article>
+                    <article class="goal-card">
+                        <div class="goal-num">02</div>
+                        <h4>Comunicación efectiva</h4>
+                        <p>Fomentar la <strong>comunicación efectiva y bidireccional</strong> entre el personal de enfermería saliente y entrante, minimizando errores por omisión o malinterpretación de datos.</p>
+                    </article>
+                    <article class="goal-card">
+                        <div class="goal-num">03</div>
+                        <h4>Continuidad del cuidado</h4>
+                        <p>Asegurar la continuidad del cuidado del paciente, proporcionando información <strong>precisa, actualizada y pertinente</strong> sobre el estado clínico, tratamientos, procedimientos pendientes y eventos relevantes durante las <strong>24 horas</strong>.</p>
+                    </article>
+                    <article class="goal-card">
+                        <div class="goal-num">04</div>
+                        <h4>Roles y responsabilidades</h4>
+                        <p>Definir los <strong>roles y responsabilidades</strong> del personal de enfermería durante el proceso de entrega y recibo de turno para garantizar un traspaso <strong>ordenado y eficiente</strong>.</p>
+                    </article>
+                    <article class="goal-card">
+                        <div class="goal-num">05</div>
+                        <h4>Reducir eventos adversos</h4>
+                        <p>Reducir los eventos adversos relacionados con fallas en la comunicación entre turnos, promoviendo una <strong>cultura de seguridad y responsabilidad compartida</strong>.</p>
+                    </article>
+                    <article class="goal-card">
+                        <div class="goal-num">06</div>
+                        <h4>Herramientas de apoyo</h4>
+                        <p>Incluir herramientas de apoyo como <strong>listas de verificación (checklist), registros escritos y entrega oral estructurada</strong>, para sistematizar el proceso.</p>
+                    </article>
+                    <article class="goal-card">
+                        <div class="goal-num">07</div>
+                        <h4>Capacitar al personal</h4>
+                        <p>Capacitar al personal de enfermería en el uso adecuado del protocolo, asegurando su <strong>comprensión e implementación uniforme</strong>.</p>
+                    </article>
+                    <article class="goal-card">
+                        <div class="goal-num">08</div>
+                        <h4>Evaluar el cumplimiento</h4>
+                        <p>Evaluar periódicamente el <strong>cumplimiento y la eficacia</strong> del protocolo de entrega y recibo de turno, proponiendo <strong>mejoras continuas</strong>.</p>
+                    </article>
+                    <article class="goal-card">
+                        <div class="goal-num">09</div>
+                        <h4>Entrega administrativa</h4>
+                        <p>Realizar la entrega administrativa del servicio que incluya <strong>novedades de personal, inventario de equipos, materiales y suministros</strong>.</p>
+                    </article>
+                    <article class="goal-card">
+                        <div class="goal-num">10</div>
+                        <h4>Incluir al paciente y su familia</h4>
+                        <p>Incluir al paciente y su familia al momento de hacer su <strong>plan de cuidados</strong> y alentarlo a <strong>cumplir los objetivos propuestos</strong>.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= PRE-REQUISITOS ========================= -->
+    <section class="section section-cream">
+        <div class="container">
+            <div class="section-head center">
+                <span class="section-tag">Antes de comenzar</span>
+                <h2>Pre-requisitos para una <span class="text-emerald">entrega segura</span></h2>
+                <p class="section-sub">La evidencia (Grado 1A) sugiere que verificar estos elementos es crucial para garantizar una transferencia de turno segura y efectiva.</p>
+            </div>
+
+            <div class="prereq-grid">
+                <div class="prereq-item"><div class="prereq-ic">📁</div><h4>Historial clínico</h4><p>Verificación previa del historial clínico del usuario.</p></div>
+                <div class="prereq-item"><div class="prereq-ic">📊</div><h4>Escalas de riesgo</h4><p>Actualizadas y aplicadas para cada paciente de la unidad.</p></div>
+                <div class="prereq-item"><div class="prereq-ic">🗂️</div><h4>Kárdex</h4><p>Y plan de cuidados de enfermería actualizados.</p></div>
+                <div class="prereq-item"><div class="prereq-ic">📔</div><h4>Libro de entrega</h4><p>Diligenciado por el médico saliente.</p></div>
+                <div class="prereq-item"><div class="prereq-ic">👔</div><h4>Presentación personal</h4><p>Cumpliendo el manual GTH-TH-M-007 (ver sección dedicada).</p></div>
+                <div class="prereq-item"><div class="prereq-ic">🧼</div><h4>Lavado de manos</h4><p>5 minutos antes para iniciar la ronda con manos seguras.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= HORARIOS / PERSONAL / ORDEN / UBICACION ========================= -->
+    <section class="section">
+        <div class="container">
+
+            <!-- Horarios -->
+            <div class="block-row">
+                <div class="block-head">
+                    <div class="block-ic block-ic-gold">⏰</div>
+                    <div>
+                        <span class="section-tag">Cuándo</span>
+                        <h3>Horarios de los turnos</h3>
+                    </div>
+                </div>
+                <div class="schedule">
+                    <div class="sch-card sch-morning">
+                        <div class="sch-icon">🌅</div>
+                        <div class="sch-time">07:00</div>
+                        <div class="sch-name">Mañana</div>
+                    </div>
+                    <div class="sch-line"></div>
+                    <div class="sch-card sch-afternoon">
+                        <div class="sch-icon">☀️</div>
+                        <div class="sch-time">13:00</div>
+                        <div class="sch-name">Tarde</div>
+                    </div>
+                    <div class="sch-line"></div>
+                    <div class="sch-card sch-night">
+                        <div class="sch-icon">🌙</div>
+                        <div class="sch-time">19:00</div>
+                        <div class="sch-name">Noche</div>
+                    </div>
+                </div>
+                <div class="callout">
+                    <strong>💡 Llegue 5 minutos antes:</strong> ese tiempo es para el lavado de manos de todo el personal y garantizar que la ronda inicie con manos seguras.
+                </div>
+            </div>
+
+            <!-- Personal -->
+            <div class="block-row">
+                <div class="block-head">
+                    <div class="block-ic block-ic-blue">👥</div>
+                    <div>
+                        <span class="section-tag">Quiénes</span>
+                        <h3>Personal que participa</h3>
+                    </div>
+                </div>
+                <div class="people-grid">
+                    <div class="people-card">
+                        <div class="people-photo">
+                            <img src="assets/escenas/saliente.jpeg" alt="Personal de enfermería saliente" onerror="this.parentNode.classList.add('no-img')">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.4 0-8 2.7-8 6v2h16v-2c0-3.3-3.6-6-8-6z"/></svg>
+                        </div>
+                        <div class="people-body">
+                            <h4>Personal saliente</h4>
+                            <p>Profesional + auxiliares + auxiliar de medicamentos. <strong>Espera ser relevado</strong> antes de retirarse.</p>
+                        </div>
+                    </div>
+                    <div class="people-card">
+                        <div class="people-photo">
+                            <img src="assets/escenas/personal_entrante.jpeg" alt="Personal de enfermería entrante" onerror="this.parentNode.classList.add('no-img')">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.4 0-8 2.7-8 6v2h16v-2c0-3.3-3.6-6-8-6z"/></svg>
+                        </div>
+                        <div class="people-body">
+                            <h4>Personal entrante</h4>
+                            <p>Profesional + auxiliares + auxiliar de medicamentos. <strong>Permanece</strong> durante toda la entrega.</p>
+                        </div>
+                    </div>
+                    <div class="people-card">
+                        <div class="people-photo">
+                            <img src="assets/personas/medicamentos.jpeg" alt="Auxiliar de medicamentos" onerror="this.parentNode.classList.add('no-img')">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1 15H9v-4H5v-2h4V7h2v4h4v2h-4v4z"/></svg>
+                        </div>
+                        <div class="people-body">
+                            <h4>Auxiliar de medicamentos</h4>
+                            <p>Diligencia el formato de novedades (Anexo 3) y entrega <strong>mano a mano</strong>. Ambos auxiliares hacen arqueo conjunto.</p>
+                        </div>
+                    </div>
+                    <div class="people-card">
+                        <div class="people-photo">
+                            <img src="assets/personas/medico.jpeg" alt="Médico hospitalario" onerror="this.parentNode.classList.add('no-img')">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3zM4 8a4 4 0 118 0 4 4 0 01-8 0zm4-2a2 2 0 100 4 2 2 0 000-4zm0 6c-3.3 0-6 1.8-6 4v2h12v-2c0-2.2-2.7-4-6-4z"/></svg>
+                        </div>
+                        <div class="people-body">
+                            <h4>Médico</h4>
+                            <p>Hospitalización y cirugía: médico general en el turno de 7:00 am. UCI: especialista en medicina crítica por turno.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="callout callout-emerald">
+                    <strong>📌 Turno corrido:</strong> el profesional con turno corrido (7am a 7pm) debe igualmente realizar la ronda de entrega de turno con el personal a las 13 horas.
+                </div>
+            </div>
+
+            <!-- Orden de entrega -->
+            <div class="block-row">
+                <div class="block-head">
+                    <div class="block-ic block-ic-emerald">🔢</div>
+                    <div>
+                        <span class="section-tag">En qué orden</span>
+                        <h3>Prioridad de entrega de pacientes</h3>
+                    </div>
+                </div>
+                <ol class="priority">
+                    <li class="prio prio-1">
+                        <div class="prio-badge">1</div>
+                        <div class="prio-body">
+                            <h4>Estado crítico</h4>
+                            <p>Pacientes pendientes de traslado a UCI o en código lila.</p>
+                        </div>
+                        <div class="prio-thumbs">
+                            <div class="thumb thumb-germenes">
+                                <img src="assets/escenas/paciente-inestable.jpg" alt="Paciente inestable o crítico" onerror="this.parentNode.classList.add('no-img')">
+                                <span class="thumb-label">Paciente crítico</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="prio prio-2">
+                        <div class="prio-badge">2</div>
+                        <div class="prio-body">
+                            <h4>Aislamiento protector</h4>
+                            <p>Pacientes con inmunidad comprometida.</p>
+                        </div>
+                        <div class="prio-thumbs">
+                            <div class="thumb thumb-estandar">
+                                <img src="assets/escenas/aislamiento-protector.jpg" alt="Aislamiento protector" onerror="this.parentNode.classList.add('no-img')">
+                                <span class="thumb-label">Protector</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="prio prio-3">
+                        <div class="prio-badge">3</div>
+                        <div class="prio-body">
+                            <h4>Pacientes estables</h4>
+                            <p>Sin requerimiento de aislamientos. Se aplican únicamente las precauciones estándar.</p>
+                        </div>
+                        <div class="prio-thumbs">
+                            <div class="thumb thumb-estable">
+                                <img src="assets/escenas/paciente-estable.jpg" alt="Paciente estable" onerror="this.parentNode.classList.add('no-img')">
+                                <span class="thumb-label">Estable</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="prio prio-4">
+                        <div class="prio-badge">4</div>
+                        <div class="prio-body">
+                            <h4>Aislamiento de contacto, gota y aerosol</h4>
+                            <p>Por último, para minimizar riesgo de transmisión a otros pacientes.</p>
+                        </div>
+                        <div class="prio-thumbs prio-thumbs-trio">
+                            <div class="thumb thumb-contacto">
+                                <img src="assets/escenas/precaucion-contacto.jpg" alt="Precauciones de contacto" onerror="this.parentNode.classList.add('no-img')">
+                                <span class="thumb-label">Contacto</span>
+                            </div>
+                            <div class="thumb thumb-gota">
+                                <img src="assets/escenas/precaucion-gota.jpg" alt="Precauciones por gota" onerror="this.parentNode.classList.add('no-img')">
+                                <span class="thumb-label">Gota</span>
+                            </div>
+                            <div class="thumb thumb-aerea">
+                                <img src="assets/escenas/precaucion-aerea.jpg" alt="Precauciones para vía aérea" onerror="this.parentNode.classList.add('no-img')">
+                                <span class="thumb-label">Aerosol</span>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Ubicación -->
+            <div class="block-row">
+                <div class="block-head">
+                    <div class="block-ic block-ic-navy">🛏️</div>
+                    <div>
+                        <span class="section-tag">Dónde</span>
+                        <h3>Ubicación: al pie de la cama</h3>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="loc-photo">
+                        <img src="assets/personas/cabezerapaciente.jpeg" alt="Equipo de enfermería en la cabecera del paciente" onerror="this.parentNode.classList.add('no-img')">
+                        <div class="loc-photo-fallback">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 18h18M5 18V8a2 2 0 012-2h10a2 2 0 012 2v10M9 14h6"/>
+                                <circle cx="12" cy="10" r="2"/>
+                            </svg>
+                            <span>Equipo en la cabecera del paciente</span>
+                        </div>
+                    </div>
+                    <div class="loc-text">
+                        <h4>Frente a la cabecera de la cama</h4>
+                        <p>Realice la entrega <strong>al alcance del oído y la vista del paciente</strong>. Esto permite involucrar más activamente al usuario y su familia en la conversación, mejorando la comprensión y la seguridad.</p>
+                        <div class="loc-warn">⚠️ Siempre se debe respetar la decisión del usuario.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= METODO IDEAS ========================= -->
+    <section class="section section-dark" id="ideas">
+        <div class="dark-glow glow-a"></div>
+        <div class="dark-glow glow-b"></div>
+        <div class="container">
+            <div class="section-head center">
+                <span class="section-tag tag-gold">Comunicación estructurada</span>
+                <h2 class="text-white">El método <span class="text-gold">IDEAS</span></h2>
+                <p class="section-sub text-soft">Liderado por el profesional de enfermería que entrega. Cada letra abarca un elemento esencial para garantizar la continuidad de la asistencia, organizando la información de forma lógica y estructurada.</p>
+            </div>
+
+            <!-- Visualizador interactivo de IDEAS -->
+            <div class="ideas-stage">
+                <div class="ideas-tabs" id="ideasTabs">
+                    <button class="ideas-tab active" data-letter="i">
+                        <span class="il">I</span>
+                        <span class="iw">IDENTIFICACIÓN</span>
+                    </button>
+                    <button class="ideas-tab" data-letter="d">
+                        <span class="il">D</span>
+                        <span class="iw">DIAGNÓSTICO</span>
+                    </button>
+                    <button class="ideas-tab" data-letter="e">
+                        <span class="il">E</span>
+                        <span class="iw">ESTADO</span>
+                    </button>
+                    <button class="ideas-tab" data-letter="a">
+                        <span class="il">A</span>
+                        <span class="iw">ACTUACIONES</span>
+                    </button>
+                    <button class="ideas-tab" data-letter="s">
+                        <span class="il">S</span>
+                        <span class="iw">SIGNOS DE ALARMA</span>
+                    </button>
+                </div>
+
+                <div class="ideas-content">
+                    <div class="ideas-panel active" data-panel="i">
+                        <div class="ideas-mega">I</div>
+                        <div class="ideas-info">
+                            <span class="ideas-eyebrow">IDENTIFICACIÓN</span>
+                            <h3>¿Quién es el paciente?</h3>
+                            <p>Datos básicos para reconocer al paciente y al profesional responsable del cuidado.</p>
+                            <ul class="ilist">
+                                <li><span>📛</span>Nombre completo y número de identificación</li>
+                                <li><span>🛏️</span>Número de cama y ubicación</li>
+                                <li><span>🎂</span>Edad y días de estancia hospitalaria</li>
+                                <li><span>👤</span>Profesional responsable o de referencia</li>
+                                <li><span>🏥</span>Especialidad tratante</li>
+                            </ul>
+                            <div class="ideas-note">
+                                <strong>👶 Neonatos:</strong> el recién nacido se identifica con el nombre de la mamá. Si es gemelo, se agrega el número de orden de nacimiento (1, 2…).
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ideas-panel" data-panel="d">
+                        <div class="ideas-mega">D</div>
+                        <div class="ideas-info">
+                            <span class="ideas-eyebrow">DIAGNÓSTICO</span>
+                            <h3>¿Qué tiene el paciente?</h3>
+                            <p>Definición clara del problema actual objeto de asistencia.</p>
+                            <ul class="ilist">
+                                <li><span>🩺</span>Diagnóstico médico actual</li>
+                                <li><span>📜</span>Antecedentes relevantes</li>
+                                <li><span>♾️</span>Enfermedades crónicas de relevancia</li>
+                                <li><span>👩‍⚕️</span>Diagnóstico principal de enfermería</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ideas-panel" data-panel="e">
+                        <div class="ideas-mega">E</div>
+                        <div class="ideas-info">
+                            <span class="ideas-eyebrow">ESTADO</span>
+                            <h3>¿Cómo se encuentra el paciente?</h3>
+                            <p>Exposición breve y ordenada de las funciones vitales y la evolución durante el turno.</p>
+                            <ul class="ilist">
+                                <li><span>📈</span>Signos vitales de entrega</li>
+                                <li><span>💧</span>Drenajes, balance de líquidos y características</li>
+                                <li><span>🧠</span>Estado de conciencia y emocional</li>
+                                <li><span>📊</span>Escalas: Downton, Braden, Maddox</li>
+                                <li><span>🫁</span>Oxígeno suplementario que se administra</li>
+                                <li><span>🩹</span>Curaciones, glucometrías y evolución del turno</li>
+                                <li><span>⚠️</span>Sucesos de seguridad presentados</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ideas-panel" data-panel="a">
+                        <div class="ideas-mega">A</div>
+                        <div class="ideas-info">
+                            <span class="ideas-eyebrow">ACTUACIONES</span>
+                            <h3>¿Qué se ha hecho y qué queda pendiente?</h3>
+                            <p>Medidas diagnósticas y terapéuticas realizadas o por realizar.</p>
+                            <ul class="ilist">
+                                <li><span>💉</span>Tratamientos administrados y por administrar</li>
+                                <li><span>🚑</span>Traslados pendientes y autorización de la aseguradora</li>
+                                <li><span>📋</span>Plan de tratamiento a seguir</li>
+                                <li><span>🔬</span>Preparación para exámenes (fecha y hora)</li>
+                                <li><span>🎯</span>Identificación de necesidades y plan de cuidados según riesgos</li>
+                                <li><span>📝</span>Pendientes administrativos</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ideas-panel" data-panel="s">
+                        <div class="ideas-mega">S</div>
+                        <div class="ideas-info">
+                            <span class="ideas-eyebrow">SIGNOS Y SÍNTOMAS DE ALARMA</span>
+                            <h3>¿Qué vigilar especialmente?</h3>
+                            <p>Aspectos clave que requieren atención especial, sobre todo en pacientes críticos o graves.</p>
+                            <ul class="ilist">
+                                <li><span>🚨</span>Cuidados y controles especiales</li>
+                                <li><span>🗣️</span>Indicaciones para el paciente y la familia</li>
+                                <li><span>🔔</span>Signos para activar el timbre de enfermería</li>
+                                <li><span>🎯</span>Educación según patología</li>
+                                <li><span>⭐</span>Objetivos personales del tratamiento</li>
+                            </ul>
+                            <div class="ideas-note">
+                                <strong>👶 Gineco-obstetricia:</strong> registre si la paciente tiene el recién nacido en alojamiento conjunto y entregue al bebé con el mismo método IDEAS (sexo, laboratorios, exámenes y procedimientos).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapa visual del método IDEAS -->
+            <div class="ideas-roadmap">
+                <h3 class="text-white text-center">Mapa visual del método</h3>
+                <div class="road">
+                    <div class="road-step">
+                        <div class="road-circle">I</div>
+                        <div class="road-info"><strong>IDENTIFICACIÓN</strong><span>Nombre, edad, cama, días</span></div>
+                    </div>
+                    <div class="road-arrow">⬇</div>
+                    <div class="road-step">
+                        <div class="road-circle">D</div>
+                        <div class="road-info"><strong>DIAGNÓSTICO</strong><span>Médico + de enfermería</span></div>
+                    </div>
+                    <div class="road-arrow">⬇</div>
+                    <div class="road-step">
+                        <div class="road-circle">E</div>
+                        <div class="road-info"><strong>ESTADO</strong><span>Vitales, escalas, evolución</span></div>
+                    </div>
+                    <div class="road-arrow">⬇</div>
+                    <div class="road-step">
+                        <div class="road-circle">A</div>
+                        <div class="road-info"><strong>ACTUACIONES</strong><span>Hecho y pendiente</span></div>
+                    </div>
+                    <div class="road-arrow">⬇</div>
+                    <div class="road-step">
+                        <div class="road-circle">S</div>
+                        <div class="road-info"><strong>ALARMA</strong><span>Signos a vigilar</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips de comunicación -->
+            <div class="tips-grid">
+                <div class="tip-card"><span>1</span><p><strong>Saludo y presentación</strong> del equipo al ingresar</p></div>
+                <div class="tip-card"><span>2</span><p>Ronda en orden: <strong>críticos → protector → estables → aislamientos</strong></p></div>
+                <div class="tip-card"><span>3</span><p>Ubicarse en la <strong>cabecera del paciente</strong></p></div>
+                <div class="tip-card"><span>4</span><p>Lenguaje <strong>simple, sin abreviaturas</strong> técnicas</p></div>
+                <div class="tip-card"><span>5</span><p>Aplicar estrategias para <strong>evaluar la comprensión</strong></p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= GALERÍA VISUAL DEL PROTOCOLO ========================= -->
+    <section class="section section-cream" id="galeria">
+        <div class="container">
+            <div class="section-head center">
+                <span class="section-tag">Recorrido visual</span>
+                <h2>Galería del <span class="text-blue">protocolo</span> en imágenes</h2>
+                <p class="section-sub">Escenas ilustradas que muestran cada momento clave del proceso de entrega y recibo de turno: desde la preparación hasta la activación del paciente.</p>
+            </div>
+
+            <div class="visual-gallery">
+                <article class="vg-item">
+                    <div class="vg-img">
+                        <span class="vg-tag">Pre-requisitos</span>
+                        <img src="assets/escenas/lavado-manos.jpg" alt="Lavado de manos según los 5 momentos de la OMS" onerror="this.parentNode.classList.add('no-img')">
+                        <svg class="vg-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11V6a3 3 0 016 0v5M5 11h14l-1 9H6l-1-9z"/></svg>
+                    </div>
+                    <div class="vg-body">
+                        <h4>Lavado de manos seguro</h4>
+                        <p>Los 5 momentos de higiene de la OMS antes y durante la ronda. Manos seguras, paciente seguro.</p>
+                    </div>
+                </article>
+
+                <article class="vg-item">
+                    <div class="vg-img">
+                        <span class="vg-tag">Comunicación</span>
+                        <img src="assets/escenas/comunicacion-ideas.jpg" alt="Equipo aplicando el método IDEAS" onerror="this.parentNode.classList.add('no-img')">
+                        <svg class="vg-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    </div>
+                    <div class="vg-body">
+                        <h4>Aplicando el método IDEAS</h4>
+                        <p>Comunicación estructurada paciente por paciente: identificación, diagnóstico, estado, actuaciones y signos de alarma.</p>
+                    </div>
+                </article>
+
+                <article class="vg-item">
+                    <div class="vg-img">
+                        <span class="vg-tag">Al pie de la cama</span>
+                        <img src="assets/escenas/cabecera-paciente.jpg" alt="Entrega frente a la cabecera del paciente" onerror="this.parentNode.classList.add('no-img')">
+                        <svg class="vg-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18h18M5 18V8a2 2 0 012-2h10a2 2 0 012 2v10"/><circle cx="12" cy="10" r="2"/></svg>
+                    </div>
+                    <div class="vg-body">
+                        <h4>Entrega frente a la cabecera</h4>
+                        <p>El equipo se ubica al alcance del oído y la vista del paciente, invitándolo a participar de la conversación.</p>
+                    </div>
+                </article>
+
+                <article class="vg-item">
+                    <div class="vg-img">
+                        <span class="vg-tag">Medicamentos</span>
+                        <img src="assets/escenas/arqueo-medicamentos.jpg" alt="Arqueo y entrega mano a mano de medicamentos" onerror="this.parentNode.classList.add('no-img')">
+                        <svg class="vg-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M9 12h6M12 9v6"/></svg>
+                    </div>
+                    <div class="vg-body">
+                        <h4>Arqueo de medicamentos</h4>
+                        <p>El auxiliar de medicamentos saliente y entrante hacen el arqueo y revisan los equipos de cada paciente.</p>
+                    </div>
+                </article>
+
+                <article class="vg-item">
+                    <div class="vg-img">
+                        <span class="vg-tag">Valoración</span>
+                        <img src="assets/escenas/valoracion-cefalocaudal.jpg" alt="Valoración cefalocaudal del paciente" onerror="this.parentNode.classList.add('no-img')">
+                        <svg class="vg-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 21h-1l-3-9 3-9h1m2 0h1l3 9-3 9h-1"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <div class="vg-body">
+                        <h4>Valoración cefalocaudal</h4>
+                        <p>Revisión de venopunciones, sondas, drenajes, integridad de piel y verificación del entorno seguro.</p>
+                    </div>
+                </article>
+
+                <article class="vg-item">
+                    <div class="vg-img">
+                        <span class="vg-tag">Briefing</span>
+                        <img src="assets/escenas/briefing-equipo.jpg" alt="Briefing del equipo entrante" onerror="this.parentNode.classList.add('no-img')">
+                        <svg class="vg-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <div class="vg-body">
+                        <h4>Briefing del equipo entrante</h4>
+                        <p>Reunión rápida del equipo al cierre de la ronda: información clave y plan de cuidados para el turno.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= ACTIVACION DEL PACIENTE ========================= -->
+    <section class="section section-cream">
+        <div class="container">
+            <div class="section-head center">
+                <span class="section-tag">Centrado en la persona</span>
+                <h2>Activación del <span class="text-emerald">paciente y su familia</span></h2>
+                <p class="section-sub">Es un error asumir que el paciente y la familia participarán en el traspaso solo por estar presentes. Hay que invitarlos explícitamente a participar.</p>
+            </div>
+            <div class="activation-grid">
+                <div class="act-card act-1">
+                    <div class="act-num">01</div>
+                    <h4>Invite a preguntar</h4>
+                    <p>Pregunte explícitamente si tiene alguna duda y aliéntelo a compartir su comprensión del plan en sus propias palabras.</p>
+                </div>
+                <div class="act-card act-2">
+                    <div class="act-num">02</div>
+                    <h4>Animar a expresar</h4>
+                    <p>Use indicaciones específicas para animarlos a expresar inquietudes y sus objetivos personales para el tratamiento.</p>
+                </div>
+                <div class="act-card act-3">
+                    <div class="act-num">03</div>
+                    <h4>Diálogo interactivo</h4>
+                    <p>Invítelos explícitamente a participar; un traspaso al pie de la cama no es automáticamente participativo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= PROCESO PASO A PASO ========================= -->
+    <section class="section" id="proceso">
+        <div class="container">
+            <div class="section-head center">
+                <span class="section-tag">Paso a paso</span>
+                <h2>Entrega de turno con <span class="text-blue">presencia del usuario</span></h2>
+                <p class="section-sub">14 pasos secuenciales para una entrega segura, humanizada y centrada en el paciente. Cada paso indica el responsable.</p>
+            </div>
+
+            <div class="steps">
+                <article class="step">
+                    <div class="step-side"><div class="step-num">1</div><div class="step-icon">🗣️</div></div>
+                    <div class="step-body">
+                        <h4>Avisar al usuario</h4>
+                        <p>Antes de iniciar, informe al usuario que se dará comienzo a la entrega de turno. Explíquele en lenguaje sencillo qué va a ocurrir y por qué.</p>
+                        <div class="step-tag step-tag-aux">Auxiliares de enfermería que entregan</div>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-side"><div class="step-num">2</div><div class="step-icon">💊</div></div>
+                    <div class="step-body">
+                        <h4>Reportar novedades del tratamiento</h4>
+                        <p>Informar al profesional sobre: intolerancias, no disponibilidad de medicamentos, negaciones del paciente o cambios del tratamiento durante el turno.</p>
+                        <div class="step-tag step-tag-aux">Auxiliar de medicamentos · Profesional</div>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-side"><div class="step-num">3</div><div class="step-icon">🧼</div></div>
+                    <div class="step-body">
+                        <h4>Lavado de manos <span class="badge-grade">Grado 1A</span></h4>
+                        <p>Realice el lavado siguiendo los <strong>5 momentos de higiene de la OMS</strong> antes de iniciar la ronda. Se repite luego de revisar 5 usuarios y se higieniza entre cada uno.</p>
+                        <div class="step-tag step-tag-all">Todo el personal</div>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-side"><div class="step-num">4</div><div class="step-icon">🛡️</div></div>
+                    <div class="step-body">
+                        <h4>Adoptar medidas de seguridad <span class="badge-grade">Grado 1A</span></h4>
+                        <p>Aplique medidas en caso de aislamientos según el manual VE-EPI-M-001C de prevención de infecciones (EPP, distanciamiento, etc.).</p>
+                        <div class="step-tag step-tag-all">Todo el personal</div>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-side"><div class="step-num">5</div><div class="step-icon">👋</div></div>
+                    <div class="step-body">
+                        <h4>Saludar y presentar al equipo</h4>
+                        <p>Al ingresar a la habitación, salude por su nombre, presente al jefe entrante, médico y auxiliares responsables de la siguiente jornada.</p>
+                        <div class="step-tag step-tag-prof">Profesional de enfermería entrante</div>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-side"><div class="step-num">6</div><div class="step-icon">⚠️</div></div>
+                    <div class="step-body">
+                        <h4>Verificar medidas de seguridad del usuario</h4>
+                        <p>Cumplimiento de aislamientos, <strong>barandas arriba</strong>, escalerilla en cada unidad y timbre de enfermería en funcionamiento.</p>
+                        <div class="step-tag step-tag-aux">Auxiliar de enfermería que entrega</div>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-side"><div class="step-num">7</div><div class="step-icon">🧹</div></div>
+                    <div class="step-body">
+                        <h4>Revisar orden y aseo</h4>
+                        <p>Verifique mesas de noche, atriles, bombas, camas y mesas puente: limpias y con objetos en su lugar.</p>
+                        <div class="step-tag step-tag-prof">Profesional que recibe turno</div>
+                    </div>
+                </article>
+
+                <article class="step step-highlight">
+                    <div class="step-side"><div class="step-num">8</div><div class="step-icon">💬</div></div>
+                    <div class="step-body">
+                        <h4>Iniciar entrega con método IDEAS <span class="badge-grade">Grado 1A</span></h4>
+                        <p>El profesional, en conjunto con el auxiliar, inicia la entrega del paciente bajo la metodología IDEAS (Identificación, Diagnóstico, Estado, Actuaciones, Signos de alarma).</p>
+                        <div class="step-tag step-tag-prof">Profesional + auxiliar que entregan</div>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-side"><div class="step-num">9</div><div class="step-icon">👂</div></div>
+                    <div class="step-body">
+                        <h4>Escuchar atentamente</h4>
+                        <p>Escuche el informe verbal e informe de inmediato cualquier alteración encontrada en signos vitales u otra condición que requiera atención.</p>
+                        <div class="step-tag step-tag-all">Equipo asistencial que recibe + estudiantes</div>
+                    </div>
+                </article>
+
+                <article class="step step-highlight">
+                    <div class="step-side"><div class="step-num">10</div><div class="step-icon">🔍</div></div>
+                    <div class="step-body">
+                        <h4>Verificar el estado del usuario <span class="badge-grade">Grado 1A</span></h4>
+                        <p><strong>Revisión cefalocaudal:</strong> venopunción, sondas, catéter, curaciones, drenajes, integridad de la piel e higiene corporal. Verifique alertas de ayuno, fichas de riesgo de caídas y lesiones de piel. Otro auxiliar verifica el entorno: limpieza, guardianes (fechas vigentes, agujas sin capuchón), rótulos de medicamentos, equipos y líquidos con sticker institucional.</p>
+                        <div class="step-note">📍 La retroalimentación sobre los hallazgos del entorno se realiza <strong>fuera</strong> de la habitación.</div>
+                        <div class="step-tag step-tag-prof">Profesional + auxiliar (entregan y reciben)</div>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-side"><div class="step-num">11</div><div class="step-icon">❓</div></div>
+                    <div class="step-body">
+                        <h4>Activar al paciente</h4>
+                        <p>Pregunte y escuche al usuario sobre dudas y comprensión del objetivo del turno. Verifique que la información brindada es clara y cumple con sus expectativas.</p>
+                        <div class="step-tag step-tag-prof">Profesional que recibe turno</div>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-side"><div class="step-num">12</div><div class="step-icon">📔</div></div>
+                    <div class="step-body">
+                        <h4>Verificar libro de entrega</h4>
+                        <p>Confirmar la información en el libro de entrega y retroalimentar al personal si es necesario.</p>
+                        <div class="step-tag step-tag-doc">Médico hospitalario</div>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-side"><div class="step-num">13</div><div class="step-icon">🤝</div></div>
+                    <div class="step-body">
+                        <h4>Despedirse cordialmente</h4>
+                        <p>Despídase del usuario indicando que el equipo queda atento ante cualquier necesidad.</p>
+                        <div class="step-tag step-tag-all">Todo el personal</div>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-side"><div class="step-num">14</div><div class="step-icon">🧼</div></div>
+                    <div class="step-body">
+                        <h4>Cerrar con lavado de manos <span class="badge-grade">Grado 1A</span></h4>
+                        <p>Realice lavado de manos final según VE-EPI-M-001C (Manual de prevención y control de infecciones).</p>
+                        <div class="step-tag step-tag-all">Todo el personal</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= ENTREGA ADMINISTRATIVA ========================= -->
+    <section class="section section-cream" id="administrativa">
+        <div class="container">
+            <div class="section-head center">
+                <span class="section-tag">Gestión del servicio</span>
+                <h2>Entrega <span class="text-blue">administrativa</span></h2>
+                <p class="section-sub">Lo que el profesional debe entregar y verificar al cambio de turno · <span class="grade-pill">Grado B1</span></p>
+            </div>
+
+            <div class="admin-split">
+                <div class="admin-card admin-out">
+                    <div class="admin-head">
+                        <div class="admin-circle">📤</div>
+                        <h3>Profesional que ENTREGA</h3>
+                    </div>
+                    <ol class="admin-list">
+                        <li>Verifica orden y limpieza del servicio.</li>
+                        <li>Informa número de ingresos y egresos.</li>
+                        <li>Reporta disponibilidad de camas.</li>
+                        <li>Reporta usuarios fallecidos.</li>
+                        <li>Comparte novedades del personal y cambios de turno.</li>
+                        <li>Comunica usuarios prioritarios y sucesos de seguridad.</li>
+                        <li>Informa necesidades de mantenimiento, infraestructura y dotación.</li>
+                    </ol>
+                </div>
+
+                <div class="admin-card admin-in">
+                    <div class="admin-head">
+                        <div class="admin-circle">📥</div>
+                        <h3>Profesional que RECIBE</h3>
+                    </div>
+                    <ul class="admin-list-check">
+                        <li><span>✔</span>Verifica sala de procedimientos, carros de medicamentos y áreas limpio/sucio.</li>
+                        <li><span>✔</span>Confirma integridad del <strong>carro de paro</strong> y diligenciamiento del formato GA-H-F-001AT.</li>
+                        <li><span>✔</span>Test del <strong>desfibrilador</strong> los sábados a las 7:00 am · formato GA-UCC-F-001E.</li>
+                        <li><span>✔</span>Revisa nevera de medicamentos y registro de temperatura por turno.</li>
+                        <li><span>✔</span>Notifica fallas en formato GA-H-F-001AX (Informe de entrega nocturna).</li>
+                        <li><span>✔</span>Verifica inventario de equipos, materiales y suministros.</li>
+                        <li><span>✔</span>Recibe elementos en custodia o cadena de custodia.</li>
+                        <li><span>✔</span>Realiza <strong>briefing</strong> con el equipo sobre los pacientes y plan de cuidados del turno.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= CONDICIONES ESPECIALES ========================= -->
+    <section class="section section-warning">
+        <div class="container">
+            <div class="alert-box">
+                <div class="alert-side">
+                    <div class="alert-pulse">⚠️</div>
+                </div>
+                <div>
+                    <span class="section-tag tag-warning">Excepción</span>
+                    <h3>Condiciones especiales</h3>
+                    <p>La <strong>única situación</strong> que permite obviar la ronda de enfermería liderada por el profesional será cuando exista una <strong>urgencia o situación prioritaria</strong> con algún paciente. En ese caso, se permite la ausencia de la jefe y los auxiliares necesarios para la atención. El resto del personal debe continuar la ronda según los lineamientos que apliquen a su perfil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= UNIFORME Y PRESENTACION PERSONAL ========================= -->
+    <section class="section" id="uniforme">
+        <div class="container">
+            <div class="section-head center">
+                <span class="section-tag">Manual GTH-TH-M-007</span>
+                <h2>Uso de <span class="text-emerald">uniformes</span> y presentación personal</h2>
+                <p class="section-sub">El uniforme es un medio de identificación y brinda al trabajador sentido de pertenencia hacia la institución. Debe mantenerse siempre limpio, planchado y en buen estado.</p>
+            </div>
+
+            <!-- Directrices generales asistenciales -->
+            <div class="uni-block">
+                <h3 class="uni-block-title">📋 Directrices generales del personal asistencial</h3>
+                <div class="uni-grid">
+                    <div class="uni-item uni-good"><div class="uni-ic">🪪</div><h4>Carné permanente</h4><p>Visible siempre para que los usuarios puedan identificar al colaborador.</p></div>
+                    <div class="uni-item uni-good"><div class="uni-ic">✨</div><h4>Limpio y planchado</h4><p>Uniforme y calzado siempre en buen estado y bien presentados.</p></div>
+                    <div class="uni-item uni-good"><div class="uni-ic">🚪</div><h4>Ingreso y egreso</h4><p>Debe realizarse con el uniforme institucional asignado.</p></div>
+                    <div class="uni-item uni-good"><div class="uni-ic">👕</div><h4>Prenda superior</h4><p>Por fuera de la inferior, a la altura de la cadera. Usar ropa interior adecuada para uniformes blancos.</p></div>
+                    <div class="uni-item uni-good"><div class="uni-ic">👟</div><h4>Calzado seguro</h4><p>Completamente cerrado, sin huecos, liviano y cómodo (Seguridad y Salud en el Trabajo).</p></div>
+                    <div class="uni-item uni-good"><div class="uni-ic">🧬</div><h4>Bioseguridad</h4><p>Cumplimiento obligatorio de normas de bioseguridad e higiene industrial.</p></div>
+                </div>
+            </div>
+
+            <!-- Cuidado personal por género -->
+            <div class="uni-personal">
+                <div class="uni-person uni-fem">
+                    <div class="uni-person-head">
+                        <span>♀️</span>
+                        <h3>Personal femenino</h3>
+                    </div>
+                    <ul class="uni-checks">
+                        <li><span>✓</span><strong>Cabello recogido</strong> en todo momento. Las jefas portan moño.</li>
+                        <li><span>✓</span><strong>Aretes:</strong> topos, candongas o zarcillo no mayor a 2 cm.</li>
+                        <li><span>✓</span><strong>Maquillaje tenue:</strong> sombras neutras tierra, labial mate.</li>
+                        <li><span>✓</span><strong>Uñas cortas</strong> a nivel del pulpejo, sin maquillar.</li>
+                        <li><span>✗</span>Sin accesorios en manos: anillos, pulseras, relojes.</li>
+                        <li><span>✗</span>Sin maquillaje artístico, escarchado o nacarado.</li>
+                        <li><span>✗</span>En cirugía y central de esterilización: <strong>prohibidos los aretes</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="uni-person uni-masc">
+                    <div class="uni-person-head">
+                        <span>♂️</span>
+                        <h3>Personal masculino</h3>
+                    </div>
+                    <ul class="uni-checks">
+                        <li><span>✓</span><strong>Cabello arreglado</strong> y barba recortada.</li>
+                        <li><span>✓</span>Buena imagen y presentación personal a diario.</li>
+                        <li><span>✓</span><strong>Uñas limpias y cortas.</strong></li>
+                        <li><span>✗</span>Sin accesorios en manos: anillos, pulseras, relojes.</li>
+                        <li><span>✗</span>Sin pantalones tipo jogger o a la altura de la pantorrilla.</li>
+                        <li><span>✗</span>Sin uniformes de otras instituciones.</li>
+                        <li><span>✗</span>Sin sacos de lana, tela o térmicos en la institución.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tipos de uniforme -->
+            <div class="uni-block">
+                <h3 class="uni-block-title">🎽 Tipos de uniforme por rol</h3>
+                <div class="uni-types">
+                    <div class="uni-type uni-type-white">
+                        <div class="uni-type-photo">
+                            <img src="assets/escenas/personal-entrante.jpg" alt="Jefe de enfermería con uniforme blanco institucional">
+                        </div>
+                        <h4>Enfermero(a) profesional</h4>
+                        <p><strong>Tela blanca antifluido</strong> con detalles azul rey institucional. Bordado: lado izquierdo logo, derecho "Enfermero". Bata blanca manga larga <strong>exclusiva</strong> para enfermeros (uso fuera de servicios y áreas comunes).</p>
+                        <span class="uni-shoe">👟 Calzado blanco cerrado, suela antideslizante</span>
+                    </div>
+                    <div class="uni-type uni-type-white">
+                        <div class="uni-type-photo">
+                            <img src="assets/escenas/personal-saliente.jpg" alt="Auxiliar de enfermería con uniforme blanco institucional">
+                        </div>
+                        <h4>Auxiliar área de la salud</h4>
+                        <p><strong>Tela blanca antifluido.</strong> Blusa con cuello y dos botones, dos bolsillos inferiores. Pantalón con bolsillos profundos. Aplica para todos los servicios incluidos laboratorio y banco de sangre.</p>
+                        <span class="uni-shoe">👟 Calzado blanco cerrado</span>
+                    </div>
+                    <div class="uni-type uni-type-blue">
+                        <div class="uni-type-photo">
+                            <img src="assets/escenas/briefing-equipo.jpg" alt="Equipo profesional / técnico del área de la salud">
+                        </div>
+                        <h4>Profesional / Técnico área de la salud</h4>
+                        <p><strong>Tela azul oscuro antifluido.</strong> Fisioterapeutas, bacteriólogos, nutricionistas, psicólogas, trabajadoras sociales, técnicos. Cuello en V, dos bolsillos inferiores, pantalón con bolsillo camuflado.</p>
+                        <span class="uni-shoe">👟 Calzado según rol</span>
+                    </div>
+                    <div class="uni-type uni-type-blue">
+                        <div class="uni-type-photo">
+                            <img src="assets/escenas/arqueo-medicamentos.jpg" alt="Personal de farmacia manejando medicamentos">
+                        </div>
+                        <h4>Personal de farmacia</h4>
+                        <p><strong>Conjunto azul oscuro antifluido.</strong> Camisa con manga corta, cuello en V, bolsillos profundos. Pantalón con bolsillo camuflado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reglas adicionales -->
+            <div class="uni-extras">
+                <div class="uni-extra">
+                    <div class="extra-ic">🥼</div>
+                    <h4>Traje quirúrgico</h4>
+                    <p>Propiedad del Hospital, exclusivo para Salas de Cirugía, Sala de Partos, Procedimientos y Esterilización. <strong>Prohibido transitar con él por áreas comunes.</strong></p>
+                </div>
+                <div class="uni-extra">
+                    <div class="extra-ic">🧥</div>
+                    <h4>Chaquetas y batas</h4>
+                    <p>En UCI, chaqueta manga larga (no para ingreso a cubículo). En hospitalización, bata manga larga (no en contacto con paciente). <strong>No se usan fuera del servicio.</strong></p>
+                </div>
+                <div class="uni-extra">
+                    <div class="extra-ic">🎩</div>
+                    <h4>Gorros</h4>
+                    <p>Solo material desechable (no tela). Obligatorio en aislamientos, preparación de medicamentos y actividades asépticas. El cabello debe permanecer recogido en todo momento.</p>
+                </div>
+                <div class="uni-extra">
+                    <div class="extra-ic">🎒</div>
+                    <h4>Canguros</h4>
+                    <p>No están prohibidos ni restringidos, pero se debe garantizar adecuada higienización por parte del personal que los utiliza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= LISTA DE CHEQUEO ACTUALIZADA ========================= -->
+    <section class="section section-cream" id="checklist">
+        <div class="container">
+            <div class="section-head center">
+                <span class="section-tag">Formato GEF-EF-F-040 v.02 · Febrero 2026</span>
+                <h2>Lista de chequeo de la <span class="text-blue">ronda</span></h2>
+                <p class="section-sub">Versión actualizada con <strong>25 criterios organizados en 3 momentos</strong>: antes, durante y después de la ronda.</p>
+            </div>
+
+            <!-- Tabs de fases -->
+            <div class="phase-tabs" id="phaseTabs">
+                <button class="phase-tab active" data-phase="before">
+                    <span class="ph-emoji">🌅</span>
+                    <strong>Antes de la ronda</strong>
+                    <small>7 criterios</small>
+                </button>
+                <button class="phase-tab" data-phase="during">
+                    <span class="ph-emoji">🩺</span>
+                    <strong>Durante la ronda</strong>
+                    <small>13 criterios</small>
+                </button>
+                <button class="phase-tab" data-phase="after">
+                    <span class="ph-emoji">📋</span>
+                    <strong>Después de la ronda</strong>
+                    <small>5 criterios</small>
+                </button>
+            </div>
+
+            <!-- Phase: BEFORE -->
+            <div class="phase-content active" data-phase="before">
+                <div class="check-grid">
+                    <div class="check-item"><div class="ck-num">1</div><p>Jefe que recibe verifica <strong>asignaciones de personal</strong>, cambios de turno, presentación personal (cabello recogido, carné, uñas cortas, zapato cerrado).</p></div>
+                    <div class="check-item"><div class="ck-num">2</div><p>La entrega y recibo se realiza a la <strong>hora establecida (7am - 1pm - 7pm)</strong>, con todo el personal presente.</p></div>
+                    <div class="check-item"><div class="ck-num">3</div><p>Personal que entrega y que recibe <strong>presentes según asignación</strong>.</p></div>
+                    <div class="check-item"><div class="ck-num">4</div><p>Auxiliar de medicamentos saliente diligencia <strong>formato de novedades (Anexo 3)</strong> y entrega al jefe. Arqueo de medicamentos con auxiliar entrante. Revisión de equipos en cada paciente.</p></div>
+                    <div class="check-item"><div class="ck-num">5</div><p><strong>Orden de entrega:</strong> 1) críticos / código lila, 2) aislamiento protector, 3) estables sin aislamiento, 4) aislamiento de contacto, gota y aerosol.</p></div>
+                    <div class="check-item"><div class="ck-num">6</div><p><strong>Lavado de manos (Grado 1A)</strong> antes de iniciar. Se repite cada 5 usuarios e higienización entre cada uno.</p></div>
+                    <div class="check-item"><div class="ck-num">7</div><p>Adoptar <strong>medidas de seguridad</strong> para atención (aislamientos según manual de prevención de infecciones).</p></div>
+                </div>
+            </div>
+
+            <!-- Phase: DURING -->
+            <div class="phase-content" data-phase="during">
+                <div class="check-grid">
+                    <div class="check-item"><div class="ck-num">8</div><p>Entrega <strong>frente a la cabecera de la cama</strong>.</p></div>
+                    <div class="check-item"><div class="ck-num">9</div><p>Saludo cordial y respetuoso, presentando al equipo entrante (jefes, médico y auxiliares incluyendo el de medicamentos).</p></div>
+                    <div class="check-item"><div class="ck-num">10</div><p>Medidas de seguridad: aislamientos, <strong>barandas arriba</strong>, escalerilla, timbre funcionando.</p></div>
+                    <div class="check-item"><div class="ck-num">11</div><p>Unidades en <strong>orden y aseo</strong>: mesas de noche, atriles, bombas, camas, mesas puente.</p></div>
+                    <div class="check-item check-ideas"><div class="ck-num">12</div><p><strong>I — IDENTIFICACIÓN:</strong> nombre completo, número de identificación, edad, días de estancia. <em>(Neonato: nombre de la mamá; gemelo: número de orden de nacimiento.)</em></p></div>
+                    <div class="check-item check-ideas"><div class="ck-num">13</div><p><strong>D — DIAGNÓSTICO:</strong> definición clara del problema actual, antecedentes y enfermedades crónicas (médico y de enfermería).</p></div>
+                    <div class="check-item check-ideas"><div class="ck-num">14</div><p><strong>E — ESTADO:</strong> el auxiliar informa signos vitales de entrega, escalas de valoración del riesgo, novedades, balance de líquidos, drenajes.</p></div>
+                    <div class="check-item"><div class="ck-num">15</div><p><strong>Valoración cefalocaudal:</strong> integridad de piel, accesos venosos (CVC, PICC, catéter periférico) con identificación, fijación, limpieza, sin signos de infección.</p></div>
+                    <div class="check-item"><div class="ck-num">16</div><p>Drenajes, sondas nasogástricas, vesicales, tubos a tórax, equipos de terapia, NE/NPT, humidificadores con <strong>rótulo</strong>.</p></div>
+                    <div class="check-item"><div class="ck-num">17</div><p>Manillas de identificación con <strong>identificación redundante</strong> según riesgo. Barandas y escalerilla.</p></div>
+                    <div class="check-item"><div class="ck-num">18</div><p>Equipos de terapia intravenosa (bomba, macrogoteo, anestesia, llave de 3 vías, dial-a-flow, conectores, multifló) <strong>identificados y vigentes</strong>.</p></div>
+                    <div class="check-item check-ideas"><div class="ck-num">19</div><p><strong>A — ACTUACIONES:</strong> cambios clínicos, plan de cuidados, ayuno, exámenes pendientes, traslados y autorizaciones. Gineco: alojamiento conjunto.</p></div>
+                    <div class="check-item check-ideas"><div class="ck-num">20</div><p><strong>S — SIGNOS DE ALARMA:</strong> educación al usuario para informar (timbre/acompañante). Verificación de comprensión y expectativas.</p></div>
+                </div>
+            </div>
+
+            <!-- Phase: AFTER -->
+            <div class="phase-content" data-phase="after">
+                <div class="check-grid">
+                    <div class="check-item"><div class="ck-num">21</div><p>Jefe que entrega informa <strong>novedades del turno</strong>: camas, fallecidos, prioritarios, infraestructura, mantenimiento, dotación.</p></div>
+                    <div class="check-item"><div class="ck-num">22</div><p>Áreas de medicamentos, procedimientos, trabajo limpio y sucio limpias y en orden. <strong>Rotulación de insumos</strong> (alcohol, quiruger, detergine, vaselina, furacin) con fechas.</p></div>
+                    <div class="check-item"><div class="ck-num">23</div><p>Entrega del <strong>carro de paro</strong>: actas actualizadas, revisión externa por turno, interna mensual. Bombas, monitores, desfibriladores, electrocardiógrafos conectados y limpios.</p></div>
+                    <div class="check-item"><div class="ck-num">24</div><p>Recipientes para cortopunzantes (guardianes y contenedor) <strong>fijados, rotulados, sin agujas reenfundadas</strong>.</p></div>
+                    <div class="check-item"><div class="ck-num">25</div><p>Nevera de medicamentos limpia, registro diario de temperatura. Multidosis rotulados y de pacientes de la unidad.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= EVALUACION DE ADHERENCIA (META 85%) ========================= -->
+    <section class="section">
+        <div class="container">
+            <div class="section-head center">
+                <span class="section-tag">Mejora continua</span>
+                <h2>Evaluación de la <span class="text-blue">adherencia</span></h2>
+            </div>
+
+            <div class="meta-block">
+                <div class="meta-circle-wrap">
+                    <svg viewBox="0 0 200 200" class="meta-svg">
+                        <circle cx="100" cy="100" r="85" fill="none" stroke="#e6efe6" stroke-width="20"/>
+                        <circle cx="100" cy="100" r="85" fill="none" stroke="url(#metaGrad)" stroke-width="20"
+                                stroke-dasharray="534" stroke-dashoffset="80.1" stroke-linecap="round"
+                                transform="rotate(-90 100 100)"/>
+                        <defs>
+                            <linearGradient id="metaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#1aaa68"/>
+                                <stop offset="50%" stop-color="#1e5fa3"/>
+                                <stop offset="100%" stop-color="#0a1f44"/>
+                            </linearGradient>
+                        </defs>
+                        <text x="100" y="100" text-anchor="middle" font-size="46" font-weight="800" fill="#0a1f44">≥85%</text>
+                        <text x="100" y="130" text-anchor="middle" font-size="13" fill="#5a6a76" letter-spacing="2">META</text>
+                    </svg>
+                </div>
+                <div class="meta-text">
+                    <h3>Adherencia mediante lista de chequeo</h3>
+                    <p>Se aplica en los servicios hospitalarios. La meta institucional de adherencia es <strong>mayor o igual al 85%</strong>.</p>
+                    <div class="formula-card">
+                        <div class="f-label">Fórmula de cumplimiento</div>
+                        <div class="f-value"><span>%</span> = (ítems cumplidos × 100) / total de ítems evaluados</div>
+                    </div>
+                    <p class="meta-extra">Los hallazgos por unidad se notifican al líder de área para intervenciones específicas. Talento humano identifica estrategias para fortalecer los resultados institucionales y se socializa en subcomité de autocontrol y mejoramiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MATERIAL DIDACTICO ========================= -->
+    <section class="section section-dark-blue" id="materiales">
+        <div class="dark-glow glow-c"></div>
+        <div class="container">
+            <div class="section-head center">
+                <span class="section-tag tag-gold">Recursos educativos</span>
+                <h2 class="text-white">Material <span class="text-gold">didáctico</span></h2>
+                <p class="section-sub text-soft">Ayudas visuales utilizadas para capacitar al personal asistencial. Descarga, comparte y úsalas en las jornadas de formación.</p>
+            </div>
+
+            <div class="mat-grid">
+                <a href="materiales/infografia-ideas.pdf" class="mat-card" target="_blank" rel="noopener">
+                    <div class="mat-thumb mat-thumb-1">
+                        <div class="mat-overlay">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                        </div>
+                        <div class="mat-letters">
+                            <span>I</span><span>D</span><span>E</span><span>A</span><span>S</span>
+                        </div>
+                    </div>
+                    <div class="mat-info">
+                        <span class="mat-tag">Infografía</span>
+                        <h4>Metodología IDEAS para la entrega de turno</h4>
+                        <p>Resumen visual de las 5 letras del método con tips de aplicación.</p>
+                        <div class="mat-action">
+                            <span>Abrir PDF</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M10 14L21 3M21 14v7H3V3h7"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="materiales/presentacion-protocolo.pdf" class="mat-card" target="_blank" rel="noopener">
+                    <div class="mat-thumb mat-thumb-2">
+                        <div class="mat-overlay">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                        </div>
+                        <div class="mat-icon-big">📊</div>
+                    </div>
+                    <div class="mat-info">
+                        <span class="mat-tag">Presentación</span>
+                        <h4>Protocolo de entrega y recibo de turno 2025</h4>
+                        <p>Presentación completa para capacitaciones del personal de enfermería (39 diapositivas).</p>
+                        <div class="mat-action">
+                            <span>Abrir PDF</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M10 14L21 3M21 14v7H3V3h7"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="mat-card mat-card-add">
+                    <div class="mat-add-content">
+                        <div class="mat-add-ic">➕</div>
+                        <h4>Agregar más material</h4>
+                        <p>Guarda nuevos PDFs, imágenes o videos en la carpeta <code>materiales/</code> y enlázalos aquí.</p>
+                        <div class="mat-add-help">
+                            <strong>📁 Ruta:</strong>
+                            <code>Proyecto_valentina/materiales/</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mat-instructions">
+                <h4>📥 Cómo agregar tu material</h4>
+                <ol>
+                    <li>Guarda el PDF / imagen / archivo en la carpeta <code>materiales/</code> del proyecto.</li>
+                    <li>Para los 2 documentos ya enlazados, usa estos nombres exactos:
+                        <ul>
+                            <li><code>infografia-ideas.pdf</code></li>
+                            <li><code>presentacion-protocolo.pdf</code></li>
+                        </ul>
+                    </li>
+                    <li>Para añadir más, duplica una tarjeta en <code>index.html</code> y cambia el <code>href</code>, título y descripción.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logos">
+                        <img src="assets/logo-hospital.jpeg" alt="Hospital">
+                        <img src="assets/logo-uan.jpeg" alt="UAN">
+                    </div>
+                    <p class="footer-slogan">"¡Corazón para Servir!"</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hospital Universitario</h4>
+                    <p>Hernando Moncaleano Perdomo</p>
+                    <p>Empresa Social del Estado</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <p>📞 608-8715907</p>
+                    <p>☎ 018000957878 (gratuita)</p>
+                    <p>✉ Hospital.universitario@huhmp.gov.co</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Ubicación</h4>
+                    <p>📍 Calle 9 No. 15-25</p>
+                    <p>Neiva – Huila – Colombia</p>
+                    <p>🌐 hospitalneiva.gov.co</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 · Material didáctico del Protocolo GDI-INV-ENF-PR-006 · Universidad Antonio Nariño · Programa de Enfermería</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-top" id="backTop" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
