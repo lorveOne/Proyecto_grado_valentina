@@ -268,24 +268,32 @@
             <h3 class="mini-head">Conceptos clave del protocolo</h3>
             <div class="def-grid">
                 <article class="def-card def-card-blue">
-                    <div class="def-emoji">👥</div>
-                    <h4>Personal de enfermería</h4>
-                    <p>Equipo asistencial que brinda cuidado a los pacientes, integrado por profesionales y auxiliares distribuidos por turnos.</p>
+                    <div class="def-image"><img src="assets/iconos-conceptos/personal.jpeg" alt="Personal de enfermería"></div>
+                    <div class="def-body">
+                        <h4>Personal de enfermería</h4>
+                        <p>Equipo asistencial que brinda cuidado a los pacientes, integrado por profesionales y auxiliares distribuidos por turnos.</p>
+                    </div>
                 </article>
                 <article class="def-card def-card-emerald">
-                    <div class="def-emoji">🤝</div>
-                    <h4>Paciente</h4>
-                    <p>Sujeto objeto de cuidado que recibe los servicios de un médico u otro profesional de la salud.</p>
+                    <div class="def-image"><img src="assets/iconos-conceptos/paciente.jpeg" alt="Paciente en cuidado hospitalario"></div>
+                    <div class="def-body">
+                        <h4>Paciente</h4>
+                        <p>Sujeto objeto de cuidado que recibe los servicios de un médico u otro profesional de la salud.</p>
+                    </div>
                 </article>
                 <article class="def-card def-card-gold">
-                    <div class="def-emoji">📑</div>
-                    <h4>Historia clínica</h4>
-                    <p>Documento que surge en el contacto entre el equipo de salud y el usuario. Único documento válido desde el punto de vista médico y legal.</p>
+                    <div class="def-image"><img src="assets/iconos-conceptos/historia.jpeg" alt="Historia clínica del paciente"></div>
+                    <div class="def-body">
+                        <h4>Historia clínica</h4>
+                        <p>Documento que surge en el contacto entre el equipo de salud y el usuario. Único documento válido desde el punto de vista médico y legal.</p>
+                    </div>
                 </article>
                 <article class="def-card def-card-navy">
-                    <div class="def-emoji">🗣️</div>
-                    <h4>Reunión briefing</h4>
-                    <p>Sesión informativa breve y concisa para transmitir información clave y dar instrucciones claras al equipo.</p>
+                    <div class="def-image"><img src="assets/iconos-conceptos/briefing.jpeg" alt="Reunión de briefing del equipo de enfermería"></div>
+                    <div class="def-body">
+                        <h4>Reunión briefing</h4>
+                        <p>Sesión informativa breve y concisa para transmitir información clave y dar instrucciones claras al equipo.</p>
+                    </div>
                 </article>
             </div>
         </div>
@@ -401,12 +409,12 @@
             </div>
 
             <div class="prereq-grid">
-                <div class="prereq-item"><div class="prereq-ic">📁</div><h4>Historial clínico</h4><p>Verificación previa del historial clínico del usuario.</p></div>
-                <div class="prereq-item"><div class="prereq-ic">📊</div><h4>Escalas de riesgo</h4><p>Actualizadas y aplicadas para cada paciente de la unidad.</p></div>
-                <div class="prereq-item"><div class="prereq-ic">🗂️</div><h4>Kárdex</h4><p>Y plan de cuidados de enfermería actualizados.</p></div>
-                <div class="prereq-item"><div class="prereq-ic">📔</div><h4>Libro de entrega</h4><p>Diligenciado por el médico saliente.</p></div>
-                <div class="prereq-item"><div class="prereq-ic">👔</div><h4>Presentación personal</h4><p>Cumpliendo el manual GTH-TH-M-007 (ver sección dedicada).</p></div>
-                <div class="prereq-item"><div class="prereq-ic">🧼</div><h4>Lavado de manos</h4><p>5 minutos antes para iniciar la ronda con manos seguras.</p></div>
+                <div class="prereq-item"><div class="prereq-ic prereq-img"><img src="assets/prerequisitos/historial.jpeg" alt="Historial clínico"></div><div class="prereq-body"><h4>Historial clínico</h4><p>Verificación previa del historial clínico del usuario.</p></div></div>
+                <div class="prereq-item"><div class="prereq-ic prereq-img"><img src="assets/prerequisitos/escalas.jpeg" alt="Escalas de riesgo"></div><div class="prereq-body"><h4>Escalas de riesgo</h4><p>Actualizadas y aplicadas para cada paciente de la unidad.</p></div></div>
+                <div class="prereq-item"><div class="prereq-ic prereq-img"><img src="assets/prerequisitos/kardex.jpeg" alt="Kárdex"></div><div class="prereq-body"><h4>Kárdex</h4><p>Y plan de cuidados de enfermería actualizados.</p></div></div>
+                <div class="prereq-item"><div class="prereq-ic prereq-img"><img src="assets/prerequisitos/libro.jpeg" alt="Libro de entrega"></div><div class="prereq-body"><h4>Libro de entrega</h4><p>Diligenciado por el médico saliente.</p></div></div>
+                <div class="prereq-item"><div class="prereq-ic prereq-img"><img src="assets/prerequisitos/presentacion.png" alt="Presentación personal"></div><div class="prereq-body"><h4>Presentación personal</h4><p>Cumpliendo el manual GTH-TH-M-007 (ver sección dedicada).</p></div></div>
+                <div class="prereq-item"><div class="prereq-ic prereq-img"><img src="assets/prerequisitos/lavado.png" alt="Lavado de manos"></div><div class="prereq-body"><h4>Lavado de manos</h4><p>5 minutos antes para iniciar la ronda con manos seguras.</p></div></div>
             </div>
         </div>
     </section>
@@ -1440,6 +1448,17 @@
     <button class="back-top" id="backTop" aria-label="Volver arriba">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
+
+    <!-- Lightbox para ampliar imágenes -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

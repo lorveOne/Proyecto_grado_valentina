@@ -105,4 +105,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // -------- Lightbox: click an image to zoom --------
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    const openLightbox = (src, alt) => {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || '';
+        lightboxCaption.textContent = alt || '';
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    };
+
+    const isExpandable = img =>
+        img.id !== 'lightboxImg' &&
+        !img.closest('nav, .navbar, footer, .foot, .lightbox');
+
+    document.querySelectorAll('img').forEach(img => {
+        if (!isExpandable(img)) return;
+        img.classList.add('zoomable');
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => openLightbox(img.src, img.alt));
+    });
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightbox) {
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) closeLightbox();
+        });
+    }
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) closeLightbox();
+    });
+
 });
