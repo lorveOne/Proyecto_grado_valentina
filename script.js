@@ -147,4 +147,216 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) closeLightbox();
     });
 
+    // -------- Material uploader (Vercel Blob) --------
+    const MAX_UPLOAD_BYTES = 25 * 1024 * 1024;
+    const matCard = document.getElementById('matUploadCard');
+    const matInput = document.getElementById('matFileInput');
+    const matProgress = document.getElementById('matProgress');
+    const matProgressFill = document.getElementById('matProgressFill');
+    const matProgressText = document.getElementById('matProgressText');
+    const matStatus = document.getElementById('matStatus');
+    const matUploadedTitle = document.getElementById('matUploadedTitle');
+    const matUploaded = document.getElementById('matUploaded');
+
+    const setStatus = (message, kind) => {
+        if (!matStatus) return;
+        if (!message) {
+            matStatus.hidden = true;
+            matStatus.textContent = '';
+            matStatus.className = 'mat-status';
+            return;
+        }
+        matStatus.hidden = false;
+        matStatus.textContent = message;
+        matStatus.className = `mat-status mat-status-${kind || 'info'}`;
+    };
+
+    const formatBytes = (bytes) => {
+        if (!bytes) return '';
+        const units = ['B', 'KB', 'MB', 'GB'];
+        let value = bytes;
+        let i = 0;
+        while (value >= 1024 && i < units.length - 1) {
+            value /= 1024;
+            i++;
+        }
+        return `${value.toFixed(value >= 10 || i === 0 ? 0 : 1)} ${units[i]}`;
+    };
+
+    const displayName = (pathname) => {
+        const base = pathname.split('/').pop() || pathname;
+        return base.replace(/^\d+-/, '');
+    };
+
+    const fileKind = (pathname) => {
+        const ext = pathname.split('.').pop().toLowerCase();
+        if (['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'].includes(ext)) return 'image';
+        if (['mp4', 'webm', 'mov', 'ogg'].includes(ext)) return 'video';
+        if (ext === 'pdf') return 'pdf';
+        return 'other';
+    };
+
+    const renderBlob = (blob) => {
+        const kind = fileKind(blob.pathname);
+        const name = displayName(blob.pathname);
+        const size = formatBytes(blob.size);
+        const date = blob.uploadedAt ? new Date(blob.uploadedAt).toLocaleDateString('es-CO', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
+
+        let thumb;
+        if (kind === 'image') {
+            thumb = `<img src="${blob.url}" alt="${name}" loading="lazy">`;
+        } else if (kind === 'video') {
+            thumb = `<video src="${blob.url}" preload="metadata" muted></video><div class="mat-up-play">▶</div>`;
+        } else if (kind === 'pdf') {
+            thumb = `<div class="mat-up-icon mat-up-pdf">PDF</div>`;
+        } else {
+            thumb = `<div class="mat-up-icon">📄</div>`;
+        }
+
+        const card = document.createElement('div');
+        card.className = `mat-up-card mat-up-${kind}`;
+        card.dataset.url = blob.url;
+        card.innerHTML = `
+            <a class="mat-up-thumb" href="${blob.url}" target="_blank" rel="noopener">${thumb}</a>
+            <div class="mat-up-info">
+                <h4 title="${name}">${name}</h4>
+                <div class="mat-up-meta">
+                    <span>${size}</span>
+                    ${date ? `<span>· ${date}</span>` : ''}
+                </div>
+                <div class="mat-up-actions">
+                    <a class="mat-up-btn" href="${blob.url}" target="_blank" rel="noopener">Abrir</a>
+                    <button type="button" class="mat-up-del" aria-label="Eliminar archivo">Eliminar</button>
+                </div>
+            </div>
+        `;
+
+        const delBtn = card.querySelector('.mat-up-del');
+        delBtn.addEventListener('click', async () => {
+            if (!confirm(`¿Eliminar "${name}"?`)) return;
+            delBtn.disabled = true;
+            delBtn.textContent = 'Eliminando…';
+            try {
+                const res = await fetch(`/api/delete?url=${encodeURIComponent(blob.url)}`, { method: 'POST' });
+                if (!res.ok) {
+                    const err = await res.json().catch(() => ({}));
+                    throw new Error(err.error || 'No se pudo eliminar');
+                }
+                card.remove();
+                if (!matUploaded.children.length) {
+                    matUploadedTitle.hidden = true;
+                }
+                setStatus('Archivo eliminado.', 'success');
+                setTimeout(() => setStatus(''), 3500);
+            } catch (error) {
+                delBtn.disabled = false;
+                delBtn.textContent = 'Eliminar';
+                setStatus(`Error al eliminar: ${error.message}`, 'error');
+            }
+        });
+
+        return card;
+    };
+
+    const refreshUploaded = async () => {
+        if (!matUploaded) return;
+        try {
+            const res = await fetch('/api/list');
+            if (!res.ok) {
+                if (res.status === 404) return;
+                throw new Error('No se pudo cargar la lista');
+            }
+            const data = await res.json();
+            const blobs = data.blobs || [];
+            matUploaded.innerHTML = '';
+            blobs.forEach(b => matUploaded.appendChild(renderBlob(b)));
+            matUploadedTitle.hidden = blobs.length === 0;
+        } catch (error) {
+            setStatus(`No se pudieron cargar archivos previos: ${error.message}`, 'error');
+        }
+    };
+
+    const uploadFile = (file) => {
+        if (file.size > MAX_UPLOAD_BYTES) {
+            setStatus(`"${file.name}" supera el límite de 25 MB.`, 'error');
+            return;
+        }
+
+        matCard.classList.add('is-uploading');
+        matProgress.hidden = false;
+        matProgressFill.style.width = '0%';
+        matProgressText.textContent = `Subiendo ${file.name}…`;
+        setStatus('');
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/api/upload', true);
+        xhr.setRequestHeader('Content-Type', file.type || 'application/octet-stream');
+        xhr.setRequestHeader('X-Filename', encodeURIComponent(file.name));
+
+        xhr.upload.addEventListener('progress', (e) => {
+            if (e.lengthComputable) {
+                const pct = (e.loaded / e.total) * 100;
+                matProgressFill.style.width = `${pct}%`;
+                matProgressText.textContent = `Subiendo ${file.name}… ${Math.round(pct)}%`;
+            }
+        });
+
+        xhr.addEventListener('load', () => {
+            matCard.classList.remove('is-uploading');
+            matProgress.hidden = true;
+            matInput.value = '';
+            if (xhr.status >= 200 && xhr.status < 300) {
+                try {
+                    const blob = JSON.parse(xhr.responseText);
+                    matUploadedTitle.hidden = false;
+                    matUploaded.prepend(renderBlob(blob));
+                    setStatus(`"${file.name}" subido correctamente.`, 'success');
+                    setTimeout(() => setStatus(''), 4000);
+                } catch (error) {
+                    setStatus('Respuesta inválida del servidor.', 'error');
+                }
+            } else {
+                let msg = 'Error en la subida.';
+                try {
+                    msg = JSON.parse(xhr.responseText).error || msg;
+                } catch (_) { /* ignore */ }
+                setStatus(msg, 'error');
+            }
+        });
+
+        xhr.addEventListener('error', () => {
+            matCard.classList.remove('is-uploading');
+            matProgress.hidden = true;
+            setStatus('Error de red durante la subida.', 'error');
+        });
+
+        xhr.send(file);
+    };
+
+    if (matCard && matInput) {
+        matInput.addEventListener('change', () => {
+            const file = matInput.files && matInput.files[0];
+            if (file) uploadFile(file);
+        });
+
+        ['dragenter', 'dragover'].forEach(ev =>
+            matCard.addEventListener(ev, (e) => {
+                e.preventDefault();
+                matCard.classList.add('is-drag');
+            })
+        );
+        ['dragleave', 'drop'].forEach(ev =>
+            matCard.addEventListener(ev, (e) => {
+                e.preventDefault();
+                matCard.classList.remove('is-drag');
+            })
+        );
+        matCard.addEventListener('drop', (e) => {
+            const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+            if (file) uploadFile(file);
+        });
+
+        refreshUploaded();
+    }
+
 });

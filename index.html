@@ -1381,32 +1381,25 @@
                     </div>
                 </a>
 
-                <div class="mat-card mat-card-add">
+                <label class="mat-card mat-card-add" id="matUploadCard">
+                    <input type="file" id="matFileInput" accept="image/*,video/*,application/pdf,.doc,.docx,.ppt,.pptx" hidden>
                     <div class="mat-add-content">
-                        <div class="mat-add-ic">➕</div>
-                        <h4>Agregar más material</h4>
-                        <p>Guarda nuevos PDFs, imágenes o videos en la carpeta <code>materiales/</code> y enlázalos aquí.</p>
-                        <div class="mat-add-help">
-                            <strong>📁 Ruta:</strong>
-                            <code>Proyecto_valentina/materiales/</code>
-                        </div>
+                        <div class="mat-add-ic">📤</div>
+                        <h4>Subir nuevo material</h4>
+                        <p>Click aquí o arrastra un archivo. PDF, imagen o video hasta 25 MB.</p>
+                        <span class="mat-add-cta">Seleccionar archivo</span>
                     </div>
-                </div>
+                    <div class="mat-add-progress" id="matProgress" hidden>
+                        <div class="mat-add-progress-bar"><div class="mat-add-progress-fill" id="matProgressFill"></div></div>
+                        <span id="matProgressText">Subiendo…</span>
+                    </div>
+                </label>
             </div>
 
-            <div class="mat-instructions">
-                <h4>📥 Cómo agregar tu material</h4>
-                <ol>
-                    <li>Guarda el PDF / imagen / archivo en la carpeta <code>materiales/</code> del proyecto.</li>
-                    <li>Para los 2 documentos ya enlazados, usa estos nombres exactos:
-                        <ul>
-                            <li><code>infografia-ideas.pdf</code></li>
-                            <li><code>presentacion-protocolo.pdf</code></li>
-                        </ul>
-                    </li>
-                    <li>Para añadir más, duplica una tarjeta en <code>index.html</code> y cambia el <code>href</code>, título y descripción.</li>
-                </ol>
-            </div>
+            <div class="mat-status" id="matStatus" hidden></div>
+
+            <h3 class="mat-uploaded-title" id="matUploadedTitle" hidden>📂 Archivos subidos</h3>
+            <div class="mat-uploaded" id="matUploaded"></div>
         </div>
     </section>
 
