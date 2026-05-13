@@ -392,11 +392,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // -------- Slot uploads (cards estáticas: ideas + protocolo) --------
     const slotKindFromContentType = (type) => {
-        if (!type) return 'other';
+        if (!type) return null;
         if (type.startsWith('image/')) return 'image';
         if (type.startsWith('video/')) return 'video';
         if (type === 'application/pdf') return 'pdf';
-        return 'other';
+        return null;
     };
 
     const renderSlotPreview = (slot, blob) => {
