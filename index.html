@@ -1398,8 +1398,20 @@
 
             <div class="mat-status" id="matStatus" hidden></div>
 
-            <h3 class="mat-uploaded-title" id="matUploadedTitle" hidden>📂 Archivos subidos</h3>
-            <div class="mat-uploaded" id="matUploaded"></div>
+            <div class="mat-uploaded-wrap" id="matUploadedWrap" hidden>
+                <div class="mat-uploaded-head">
+                    <h3 class="mat-uploaded-title">📂 Archivos subidos</h3>
+                    <div class="mat-uploaded-nav">
+                        <button type="button" class="mat-nav-btn" id="matPrev" aria-label="Anterior">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button type="button" class="mat-nav-btn" id="matNext" aria-label="Siguiente">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="mat-uploaded" id="matUploaded"></div>
+            </div>
         </div>
     </section>
 

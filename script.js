@@ -155,8 +155,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const matProgressFill = document.getElementById('matProgressFill');
     const matProgressText = document.getElementById('matProgressText');
     const matStatus = document.getElementById('matStatus');
-    const matUploadedTitle = document.getElementById('matUploadedTitle');
+    const matUploadedWrap = document.getElementById('matUploadedWrap');
     const matUploaded = document.getElementById('matUploaded');
+    const matPrev = document.getElementById('matPrev');
+    const matNext = document.getElementById('matNext');
 
     const setStatus = (message, kind) => {
         if (!matStatus) return;
@@ -244,8 +246,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 card.remove();
                 if (!matUploaded.children.length) {
-                    matUploadedTitle.hidden = true;
+                    matUploadedWrap.hidden = true;
                 }
+                updateNavState();
                 setStatus('Archivo eliminado.', 'success');
                 setTimeout(() => setStatus(''), 3500);
             } catch (error) {
@@ -257,6 +260,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return card;
     };
+
+    const updateNavState = () => {
+        if (!matPrev || !matNext || !matUploaded) return;
+        const { scrollLeft, scrollWidth, clientWidth } = matUploaded;
+        const atStart = scrollLeft <= 4;
+        const atEnd = scrollLeft + clientWidth >= scrollWidth - 4;
+        matPrev.disabled = atStart;
+        matNext.disabled = atEnd;
+        const hasOverflow = scrollWidth > clientWidth + 4;
+        matPrev.classList.toggle('hidden', !hasOverflow);
+        matNext.classList.toggle('hidden', !hasOverflow);
+    };
+
+    const scrollCarousel = (direction) => {
+        if (!matUploaded) return;
+        const firstCard = matUploaded.querySelector('.mat-up-card');
+        const step = firstCard ? firstCard.getBoundingClientRect().width + 20 : 300;
+        matUploaded.scrollBy({ left: step * direction, behavior: 'smooth' });
+    };
+
+    if (matPrev) matPrev.addEventListener('click', () => scrollCarousel(-1));
+    if (matNext) matNext.addEventListener('click', () => scrollCarousel(1));
+    if (matUploaded) {
+        matUploaded.addEventListener('scroll', updateNavState, { passive: true });
+        window.addEventListener('resize', updateNavState);
+    }
 
     const refreshUploaded = async () => {
         if (!matUploaded) return;
@@ -270,7 +299,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const blobs = data.blobs || [];
             matUploaded.innerHTML = '';
             blobs.forEach(b => matUploaded.appendChild(renderBlob(b)));
-            matUploadedTitle.hidden = blobs.length === 0;
+            matUploadedWrap.hidden = blobs.length === 0;
+            requestAnimationFrame(updateNavState);
         } catch (error) {
             setStatus(`No se pudieron cargar archivos previos: ${error.message}`, 'error');
         }
@@ -308,8 +338,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (xhr.status >= 200 && xhr.status < 300) {
                 try {
                     const blob = JSON.parse(xhr.responseText);
-                    matUploadedTitle.hidden = false;
+                    matUploadedWrap.hidden = false;
                     matUploaded.prepend(renderBlob(blob));
+                    requestAnimationFrame(updateNavState);
                     setStatus(`"${file.name}" subido correctamente.`, 'success');
                     setTimeout(() => setStatus(''), 4000);
                 } catch (error) {
