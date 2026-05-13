@@ -390,4 +390,116 @@ document.addEventListener('DOMContentLoaded', () => {
         refreshUploaded();
     }
 
+    // -------- Slot uploads (cards estáticas: ideas + protocolo) --------
+    const slotKindFromContentType = (type) => {
+        if (!type) return 'other';
+        if (type.startsWith('image/')) return 'image';
+        if (type.startsWith('video/')) return 'video';
+        if (type === 'application/pdf') return 'pdf';
+        return 'other';
+    };
+
+    const renderSlotPreview = (slot, blob) => {
+        const card = document.querySelector(`.mat-slot-card[data-slot="${slot}"]`);
+        if (!card) return;
+        const thumb = card.querySelector('[data-slot-thumb]');
+        const action = card.querySelector('[data-slot-action]');
+        const fileInfo = card.querySelector('[data-slot-file]');
+        if (!thumb || !action || !fileInfo) return;
+
+        const name = blob.originalName || displayName(blob.pathname);
+        const size = blob.size ? formatBytes(blob.size) : '';
+        const kind = slotKindFromContentType(blob.contentType) || fileKind(blob.pathname);
+
+        action.href = blob.url;
+        action.querySelector('span').textContent = kind === 'pdf' ? 'Abrir PDF' : 'Abrir archivo';
+
+        fileInfo.hidden = false;
+        fileInfo.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span class="mat-slot-name" title="${name}">${name}</span>
+            ${size ? `<span class="mat-slot-size">${size}</span>` : ''}
+        `;
+
+        thumb.classList.add('mat-thumb-has-file');
+        thumb.dataset.kind = kind;
+
+        let preview;
+        if (kind === 'image') {
+            preview = `<img class="mat-slot-preview-media" src="${blob.url}" alt="${name}" loading="lazy">`;
+        } else if (kind === 'video') {
+            preview = `<video class="mat-slot-preview-media" src="${blob.url}" preload="metadata" muted controls></video>`;
+        } else if (kind === 'pdf') {
+            preview = `<iframe class="mat-slot-preview-media mat-slot-preview-pdf" src="${blob.url}#toolbar=0&navpanes=0&scrollbar=0&view=FitH" title="${name}"></iframe>`;
+        } else {
+            preview = `<div class="mat-slot-preview-doc"><div class="mat-up-icon">📄</div><span>${name}</span></div>`;
+        }
+        thumb.innerHTML = preview;
+    };
+
+    const uploadToSlot = async (slot, file) => {
+        const card = document.querySelector(`.mat-slot-card[data-slot="${slot}"]`);
+        if (!card) return;
+
+        if (file.size > MAX_UPLOAD_BYTES) {
+            setStatus(`"${file.name}" supera el límite de 25 MB.`, 'error');
+            return;
+        }
+
+        card.classList.add('is-uploading');
+        setStatus(`Subiendo "${file.name}"…`, 'info');
+
+        try {
+            const res = await fetch(`/api/upload?slot=${encodeURIComponent(slot)}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': file.type || 'application/octet-stream',
+                    'X-Filename': encodeURIComponent(file.name),
+                },
+                body: file,
+            });
+            if (!res.ok) {
+                const err = await res.json().catch(() => ({}));
+                throw new Error(err.error || 'No se pudo subir el archivo');
+            }
+            const blob = await res.json();
+            renderSlotPreview(slot, blob);
+            setStatus(`Archivo de "${slot}" actualizado correctamente.`, 'success');
+            setTimeout(() => setStatus(''), 4000);
+        } catch (error) {
+            setStatus(`Error: ${error.message}`, 'error');
+        } finally {
+            card.classList.remove('is-uploading');
+        }
+    };
+
+    document.querySelectorAll('.mat-slot-replace').forEach((btn) => {
+        const slot = btn.dataset.slotTrigger;
+        const input = document.querySelector(`[data-slot-input="${slot}"]`);
+        btn.addEventListener('click', () => input && input.click());
+    });
+
+    document.querySelectorAll('.mat-slot-input').forEach((input) => {
+        const slot = input.dataset.slotInput;
+        input.addEventListener('change', () => {
+            const file = input.files && input.files[0];
+            if (file) uploadToSlot(slot, file);
+            input.value = '';
+        });
+    });
+
+    const loadSlots = async () => {
+        try {
+            const res = await fetch('/api/slots');
+            if (!res.ok) return;
+            const data = await res.json();
+            const slots = data.slots || {};
+            Object.keys(slots).forEach((slot) => {
+                if (slots[slot]) renderSlotPreview(slot, slots[slot]);
+            });
+        } catch (_) { /* offline o API ausente: las cards se quedan con su contenido por defecto */ }
+    };
+
+    loadSlots();
+
 });

@@ -1343,8 +1343,13 @@
             </div>
 
             <div class="mat-grid">
-                <a href="materiales/infografia-ideas.pdf" class="mat-card" target="_blank" rel="noopener">
-                    <div class="mat-thumb mat-thumb-1">
+                <div class="mat-card mat-slot-card" data-slot="ideas" data-default-href="materiales/infografia-ideas.pdf">
+                    <button type="button" class="mat-slot-replace" data-slot-trigger="ideas">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                        <span>Cambiar archivo</span>
+                    </button>
+                    <input type="file" hidden class="mat-slot-input" data-slot-input="ideas" accept="image/*,video/*,application/pdf,.doc,.docx,.ppt,.pptx">
+                    <div class="mat-thumb mat-thumb-1" data-slot-thumb="ideas">
                         <div class="mat-overlay">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
                         </div>
@@ -1356,15 +1361,21 @@
                         <span class="mat-tag">Infografía</span>
                         <h4>Metodología IDEAS para la entrega de turno</h4>
                         <p>Resumen visual de las 5 letras del método con tips de aplicación.</p>
-                        <div class="mat-action">
+                        <div class="mat-slot-file" data-slot-file="ideas" hidden></div>
+                        <a class="mat-action" data-slot-action="ideas" href="materiales/infografia-ideas.pdf" target="_blank" rel="noopener">
                             <span>Abrir PDF</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M10 14L21 3M21 14v7H3V3h7"/></svg>
-                        </div>
+                        </a>
                     </div>
-                </a>
+                </div>
 
-                <a href="materiales/presentacion-protocolo.pdf" class="mat-card" target="_blank" rel="noopener">
-                    <div class="mat-thumb mat-thumb-2">
+                <div class="mat-card mat-slot-card" data-slot="protocolo" data-default-href="materiales/presentacion-protocolo.pdf">
+                    <button type="button" class="mat-slot-replace" data-slot-trigger="protocolo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                        <span>Cambiar archivo</span>
+                    </button>
+                    <input type="file" hidden class="mat-slot-input" data-slot-input="protocolo" accept="image/*,video/*,application/pdf,.doc,.docx,.ppt,.pptx">
+                    <div class="mat-thumb mat-thumb-2" data-slot-thumb="protocolo">
                         <div class="mat-overlay">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
                         </div>
@@ -1374,12 +1385,13 @@
                         <span class="mat-tag">Presentación</span>
                         <h4>Protocolo de entrega y recibo de turno 2025</h4>
                         <p>Presentación completa para capacitaciones del personal de enfermería (39 diapositivas).</p>
-                        <div class="mat-action">
+                        <div class="mat-slot-file" data-slot-file="protocolo" hidden></div>
+                        <a class="mat-action" data-slot-action="protocolo" href="materiales/presentacion-protocolo.pdf" target="_blank" rel="noopener">
                             <span>Abrir PDF</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M10 14L21 3M21 14v7H3V3h7"/></svg>
-                        </div>
+                        </a>
                     </div>
-                </a>
+                </div>
 
                 <label class="mat-card mat-card-add" id="matUploadCard">
                     <input type="file" id="matFileInput" accept="image/*,video/*,application/pdf,.doc,.docx,.ppt,.pptx" hidden>

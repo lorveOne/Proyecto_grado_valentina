@@ -12,9 +12,9 @@ export default async function handler(req, res) {
 
     try {
         const result = await list({ prefix: 'materiales/', token });
-        const blobs = (result.blobs || []).sort(
-            (a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime()
-        );
+        const blobs = (result.blobs || [])
+            .filter((b) => !b.pathname.startsWith('materiales/_slots/'))
+            .sort((a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime());
         return res.status(200).json({ blobs });
     } catch (error) {
         return res.status(500).json({ error: error.message || 'Error al listar archivos' });

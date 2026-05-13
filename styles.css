@@ -3445,3 +3445,110 @@ img { max-width: 100%; display: block; }
     color: white;
 }
 .mat-up-del:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ========================= SLOT CARDS (Metodología + Protocolo con archivos editables) ========================= */
+.mat-slot-card { position: relative; }
+.mat-slot-card.is-uploading { pointer-events: none; opacity: 0.85; }
+
+.mat-slot-replace {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px 8px 12px;
+    background: rgba(10, 31, 68, 0.85);
+    color: white;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transition);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+.mat-slot-replace svg { width: 14px; height: 14px; }
+.mat-slot-replace:hover {
+    background: var(--grad-gold);
+    color: var(--uan-navy);
+    border-color: var(--uan-gold);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(212, 175, 55, 0.40);
+}
+
+.mat-thumb-has-file {
+    background: white;
+    padding: 0;
+}
+.mat-thumb-has-file .mat-overlay,
+.mat-thumb-has-file .mat-letters,
+.mat-thumb-has-file .mat-icon-big {
+    display: none;
+}
+.mat-slot-preview-media {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
+.mat-slot-preview-media[src],
+.mat-slot-preview-pdf {
+    background: white;
+}
+img.mat-slot-preview-media,
+video.mat-slot-preview-media {
+    object-fit: contain;
+}
+.mat-slot-preview-doc {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    gap: 12px;
+    color: var(--uan-navy);
+    font-weight: 700;
+    padding: 16px;
+    text-align: center;
+    background: linear-gradient(160deg, #fdfdfd, #f1f5fa);
+}
+.mat-slot-preview-doc .mat-up-icon { font-size: 56px; }
+.mat-slot-preview-doc span {
+    font-size: 14px;
+    word-break: break-all;
+    line-height: 1.4;
+}
+
+.mat-slot-file {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    margin-bottom: 14px;
+    background: rgba(212, 175, 55, 0.10);
+    border: 1px solid rgba(212, 175, 55, 0.30);
+    border-radius: 10px;
+    font-size: 12.5px;
+    color: var(--uan-navy);
+}
+.mat-slot-file svg {
+    width: 16px;
+    height: 16px;
+    color: var(--uan-gold);
+    flex-shrink: 0;
+}
+.mat-slot-name {
+    flex: 1;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.mat-slot-size {
+    color: var(--gray-500);
+    font-weight: 500;
+    font-size: 11.5px;
+}
