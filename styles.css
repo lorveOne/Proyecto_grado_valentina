@@ -3016,9 +3016,10 @@ img { max-width: 100%; display: block; }
     padding: 22px 0;
     text-align: center;
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.70);
     margin-top: 20px;
 }
+.footer-bottom p { color: rgba(255, 255, 255, 0.70); }
 
 /* ========================= BACK TO TOP ========================= */
 .back-top {
