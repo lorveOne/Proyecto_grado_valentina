@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (kind === 'video') {
             thumb = `<video src="${blob.url}" preload="metadata" muted></video><div class="mat-up-play">▶</div>`;
         } else if (kind === 'pdf') {
-            thumb = `<div class="mat-up-icon mat-up-pdf">PDF</div>`;
+            thumb = `<iframe class="mat-up-pdf-frame" src="${blob.url}#toolbar=0&navpanes=0&scrollbar=0&view=FitH" title="${name}" loading="lazy"></iframe><span class="mat-up-pdf-badge">PDF</span>`;
         } else {
             thumb = `<div class="mat-up-icon">📄</div>`;
         }
