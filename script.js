@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const displayName = (pathname) => {
         const base = pathname.split('/').pop() || pathname;
-        return base.replace(/^\d+-/, '');
+        return base.replace(/^\d+-/, '').replace(/^[a-z]+__/, '');
     };
 
     const fileKind = (pathname) => {
@@ -407,7 +407,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const fileInfo = card.querySelector('[data-slot-file]');
         if (!thumb || !action || !fileInfo) return;
 
-        const name = blob.originalName || displayName(blob.pathname);
+        const stripSlotPrefix = (pathname) => {
+            const base = (pathname || '').split('/').pop() || pathname || '';
+            const prefix = `${slot}__`;
+            return base.startsWith(prefix) ? base.slice(prefix.length) : base.replace(/^\d+-/, '');
+        };
+        const name = blob.originalName || stripSlotPrefix(blob.pathname);
         const size = blob.size ? formatBytes(blob.size) : '';
         const kind = slotKindFromContentType(blob.contentType) || fileKind(blob.pathname);
 
@@ -430,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (kind === 'video') {
             preview = `<video class="mat-slot-preview-media" src="${blob.url}" preload="metadata" muted controls></video>`;
         } else if (kind === 'pdf') {
-            preview = `<iframe class="mat-slot-preview-media mat-slot-preview-pdf" src="${blob.url}#toolbar=0&navpanes=0&scrollbar=0&view=FitH" title="${name}"></iframe>`;
+            preview = `<iframe class="mat-slot-preview-media mat-slot-preview-pdf" src="${blob.url}#toolbar=0&navpanes=0&scrollbar=0&view=FitH" title="${name}" scrolling="no"></iframe>`;
         } else {
             preview = `<div class="mat-slot-preview-doc"><div class="mat-up-icon">📄</div><span>${name}</span></div>`;
         }

@@ -66,7 +66,14 @@ export default async function handler(req, res) {
             addRandomSuffix: false,
         });
 
-        return res.status(200).json({ ...blob, slot: slot || null });
+        const response = { ...blob, slot: slot || null };
+        if (slot) {
+            const prefix = `materiales/_slots/${slot}__`;
+            response.originalName = blob.pathname.startsWith(prefix)
+                ? blob.pathname.slice(prefix.length)
+                : blob.pathname.split('/').pop();
+        }
+        return res.status(200).json(response);
     } catch (error) {
         return res.status(500).json({ error: error.message || 'Error al subir el archivo' });
     }
